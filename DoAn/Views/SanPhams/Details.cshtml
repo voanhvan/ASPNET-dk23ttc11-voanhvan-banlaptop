@@ -1,0 +1,355 @@
+﻿@model DoAn.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<DoAn.Models.SanPham> dslq = ViewBag.ds;
+}
+
+<div class="page-wrapper">
+    <main class="main">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
+            <div class="container d-flex align-items-center">
+                <ol class="breadcrumb">
+                    @*<li class="breadcrumb-item"><a href="~/Home">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="~/SanPhams">Sản phẩm</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>*@
+                </ol>
+            </div>
+        </nav>
+
+        <div class="mt-3"></div>
+
+        <div class="page-content">
+            <div class="container">
+                <div class="product-details-top">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="product-gallery product-gallery-vertical">
+                                <div class="row">
+                                    <figure class="product-main-image">
+                                        <img id="product-zoom" src="@Url.Content("~/wwwroot/images/" + Model.hinhanh)" alt="product image">
+
+                                        
+                                    </figure>
+
+                                    <div id="product-zoom-gallery" class="product-image-gallery">
+                                        <a class="product-gallery-item active" href="#" data-image="~/Content/assets/images/products/single/1.jpg" data-zoom-image="~/Content/assets/images/products/single/1-big.jpg">
+                                            <img src="@Url.Content("~/wwwroot/images/" + Model.hinhanh)" alt="product side">
+                                        </a>
+
+                                        <a class="product-gallery-item" href="#" data-image="~/Content/assets/images/products/single/2.jpg" data-zoom-image="~/Content/assets/images/products/single/2-big.jpg">
+                                            <img src="@Url.Content("~/wwwroot/images/" + Model.hinhanh)" alt="product cross">
+                                        </a>
+
+                                        <a class="product-gallery-item" href="#" data-image="~/Content/assets/images/products/single/3.jpg" data-zoom-image="~/Content/assets/images/products/single/3-big.jpg">
+                                            <img src="@Url.Content("~/wwwroot/images/" + Model.hinhanh)" alt="product with model">
+                                        </a>
+
+                                        <a class="product-gallery-item" href="#" data-image="~/Content/assets/images/products/single/4.jpg" data-zoom-image="~/Content/assets/images/products/single/4-big.jpg">
+                                            <img src="@Url.Content("~/wwwroot/images/" + Model.hinhanh)" alt="product back">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="product-details">
+                                <h1 class="product-title">@Html.DisplayFor(model => model.tensp)</h1>
+
+                                <div class="ratings-container">
+                                    <div class="ratings">
+                                        <div class="ratings-val" style="width: 80%;"></div>
+                                    </div>
+                                    <a class="ratings-text" href="#product-review-link" id="review-link">( 2 Reviews )</a>
+                                </div>
+
+                                <div class="product-price">
+                                    @{ 
+                                        decimal gia = (decimal)Model.giaban;
+                                        string formattedPrice = gia.ToString("#,##0");
+                                    }
+                                    @formattedPrice đ
+                                </div>
+
+                                <div class="product-content">
+                                    <p></p>
+                                </div>
+
+                                <div class="details-filter-row details-row-size">
+                                    <label>CPU:</label>
+                                    <div class="product-nav product-nav-thumbs">
+                                        @Html.DisplayFor(model => model.CPU)
+                                    </div>
+                                </div>
+                                <div class="details-filter-row details-row-size">
+                                    <label>RAM:</label>
+                                    <div class="product-nav product-nav-thumbs">
+                                        @Html.DisplayFor(model => model.RAM)
+                                    </div>
+                                </div>
+                                <div class="details-filter-row details-row-size">
+                                    <label>SSD:</label>
+                                    <div class="product-nav product-nav-thumbs">
+                                        @Html.DisplayFor(model => model.SSD)
+                                    </div>
+                                </div>
+                                <div class="details-filter-row details-row-size">
+                                    <label>VGA:</label>
+                                    <div class="product-nav product-nav-thumbs">
+                                        @Html.DisplayFor(model => model.carddohoa)
+                                    </div>
+                                </div>
+                                <div class="details-filter-row details-row-size">
+                                    <label>Kho: </label>
+                                    <div class="product-nav product-nav-thumbs">
+                                        @Html.DisplayFor(model => model.soluong) Sản Phẩm
+                                    </div>
+                                </div>
+                                
+                                <div class="details-filter-row details-row-size">
+                                    <label for="qty">Số lượng:</label>
+                                    <div class="product-details-quantity">
+                                        <input type="number" id="qty" class="form-control" data-qtyproduct="@Model.soluong" value="1" min="1" max="100" step="1" data-decimals="0" required>
+                                    </div>
+                                </div>
+
+                                <div class="product-details-action">
+                                    <button id="addcart" class="btn-product btn-cart" data-product-id="@Model.masp" ><span>Thêm vào giỏ hàng</span></button>
+
+                                    <div class="" style="margin-left: 15px;">
+                                        <a href="#" class="btn-product btn-wishlist" style="padding-left: 5px; padding-right: 5px;"><span>Yêu thích sản phẩm</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-details-tab">
+                    <ul class="nav nav-pills justify-content-center" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">Mô tả</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="product-info-link" data-toggle="tab" href="#product-info-tab" role="tab" aria-controls="product-info-tab" aria-selected="false">Thông số kỹ thuật</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">Đánh giá</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
+                            <div class="product-desc-content">
+                                <h3>Mô tả</h3>
+                                <p>@Model.mota</p>
+                                @*<ul>
+                                    <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
+                                    <li>Vivamus finibus vel mauris ut vehicula.</li>
+                                    <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
+                                </ul>
+
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. 
+                                Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. 
+                                Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. </p>*@
+                            </div><!-- End .product-desc-content -->
+                        </div><!-- .End .tab-pane -->
+                        <div class="tab-pane fade" id="product-info-tab" role="tabpanel" aria-labelledby="product-info-link">
+                            <div class="product-desc-content">
+                                <h3>Information</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. </p>
+
+                                <h3>Fabric & care</h3>
+                                <ul>
+                                    <li>Faux suede fabric</li>
+                                    <li>Gold tone metal hoop handles.</li>
+                                    <li>RI branding</li>
+                                    <li>Snake print trim interior </li>
+                                    <li>Adjustable cross body strap</li>
+                                    <li> Height: 31cm; Width: 32cm; Depth: 12cm; Handle Drop: 61cm</li>
+                                </ul>
+
+                                <h3>Size</h3>
+                                <p>one size</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="product-review-tab" role="tabpanel" aria-labelledby="product-review-link">
+                            <div class="reviews">
+                                <h3>Reviews (2)</h3>
+                                <div class="review">
+                                    <div class="row no-gutters">
+                                        <div class="col-auto">
+                                            <h4><a href="#">Samanta J.</a></h4>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-val" style="width: 80%;"></div>
+                                                </div>
+                                            </div>
+                                            <span class="review-date">6 days ago</span>
+                                        </div>
+                                        <div class="col">
+                                            <h4>Good, perfect size</h4>
+
+                                            <div class="review-content">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum dolores assumenda asperiores facilis porro reprehenderit animi culpa atque blanditiis commodi perspiciatis doloremque, possimus, explicabo, autem fugit beatae quae voluptas!</p>
+                                            </div>
+
+                                            <div class="review-action">
+                                                <a href="#"><i class="icon-thumbs-up"></i>(2)</a>
+                                                <a href="#"><i class="icon-thumbs-down"></i>(0)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="review">
+                                    <div class="row no-gutters">
+                                        <div class="col-auto">
+                                            <h4><a href="#">John Doe</a></h4>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-val" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                            <span class="review-date">5 days ago</span>
+                                        </div>
+                                        <div class="col">
+                                            <h4>Very good</h4>
+
+                                            <div class="review-content">
+                                                <p>Sed, molestias, tempore? Ex dolor esse iure hic veniam laborum blanditiis laudantium iste amet. Cum non voluptate eos enim, ab cumque nam, modi, quas iure illum repellendus, blanditiis perspiciatis beatae!</p>
+                                            </div>
+
+                                            <div class="review-action">
+                                                <a href="#"><i class="icon-thumbs-up"></i>Helpful (0)</a>
+                                                <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="title text-center mb-4">GỢI Ý SẢN PHẨM</h2>
+
+                <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                     data-owl-options='{
+                            "nav": false,
+                            "dots": true,
+                            "margin": 20,
+                            "loop": false,
+                            "responsive": {
+                                "0": {
+                                    "items":1
+                                },
+                                "480": {
+                                    "items":2
+                                },
+                                "768": {
+                                    "items":3
+                                },
+                                "992": {
+                                    "items":4
+                                },
+                                "1200": {
+                                    "items":4,
+                                    "nav": true,
+                                    "dots": false
+                                }
+                            }
+                        }'>
+                    @foreach (var item in dslq)
+                    {
+                        <div class="product">
+                            <figure class="product-media">
+                                @*<span class="product-label label-sale">Sale</span>*@
+                                <a href="~/SanPhams/Details/@item.masp">
+                                    <img src="@Url.Content("~/wwwroot/images/" + item.hinhanh)" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>Yêu thích</span></a>
+                                </div>
+
+                                <div class="product-action">
+                                    <button id="addcart" data-product-id="@item.masp" class="btn-product btn-cart" title="Add to cart">
+                                        <span>Thêm vào giỏ</span>
+                                    </button>
+
+                                </div>
+                            </figure>
+
+                            <div class="product-body">
+                                <h3 class="product-title"><a href="~/SanPhams/Details/@item.masp">@item.tensp</a></h3>
+                                <div class="product-price">
+                                    @{
+                                        decimal giaban = (decimal)item.giaban;
+                                        string f = giaban.ToString("#,##0");
+                                    }
+                                    @f đ
+                                </div>
+                                <div class="ratings-container">
+                                    <div class="ratings">
+                                        <div class="ratings-val" style="width: 80%;"></div>
+                                    </div>
+                                    <span class="ratings-text">( 12 Reviews )</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+
+<script>
+    $(document).ready(function() {
+        $('.btn-cart').click(function() {
+            var productId = $(this).data('product-id');
+            var qty = $('#qty').val();
+
+            $.ajax({
+                url: '@Url.Action("AddCart2", "SanPhams")',
+                type: 'POST',
+                data: { id: productId, soluong: qty },
+                success: function (result) {
+                    if (result.success && result.message=="T") {
+                        toastr.success("Thêm vào giỏ hàng thành công", "Thành Công");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1500);
+
+                    }
+                    else if (result.success && result.message == "F") {
+                            toastr.error("Thêm vào giỏ hàng không thành công", "Không thành Công");
+                    }
+                    else
+                    {
+                        window.location.href = '/Login/Index';
+                    }
+                },
+                error: function() {
+
+                    alert('Đã xảy ra lỗi!');
+                }
+            });
+
+        });
+    });
+
+    var inputElement = document.getElementById('qty');
+    inputElement.addEventListener('change', function () {
+        var val = inputElement.value;
+        var sl = parseInt(val);
+        var soluong = $(this).data('qtyproduct');
+        if (sl > soluong) {
+            toastr.warning("Số lượng kho không đủ !", "Cảnh Báo");
+        }
+    });
+</script>

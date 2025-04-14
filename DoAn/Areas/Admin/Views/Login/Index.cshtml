@@ -1,0 +1,128 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AN PHÁT Computer</title>
+    <link rel="shortcut icon" href="~/wwwroot/images/anphatsafari.png">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="~/Content/assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="~/Content/assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="~/Content/Client/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/Client/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Client/dist/css/adminlte.min.css">
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box" style="width: 400px;">
+        <div class="login-logo">
+            <a href=""><b>Admin AN PHÁT</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Đăng Nhập Quản Tri Viên</p>
+
+                @*<form action="" method="post">*@
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">
+                                Nhớ tài khoản
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <button @*type="submit"*@ class="btn btn-primary btn-block dangnhap">Đăng nhập</button>
+                    </div>
+
+                </div>
+
+
+                @*<div class="social-auth-links text-center mb-3">
+                        <p>- OR -</p>
+                        <a href="#" class="btn btn-block btn-primary">
+                            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                        </a>
+                        <a href="#" class="btn btn-block btn-danger">
+                            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                        </a>
+                    </div>*@
+
+                <p class="mb-1">
+                    <a href="">Quên mật khẩu</a>
+                </p>
+                @*<p class="mb-0">
+                        <a href="" class="text-center">Register a new membership</a>
+                    </p>*@
+            </div>
+
+        </div>
+    </div>
+    <script src="~/Content/Client/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/Client/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Client/dist/js/adminlte.min.js"></script>
+    <script src="~/Scripts/toastr.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.dangnhap').click(function() {
+                var email = document.getElementById("email").value;
+                var pass = document.getElementById("pass").value;
+                console.log(email);
+                console.log(pass);
+                $.ajax({
+                    url: '@Url.Action("DangNhap", "Login")',
+                    type: 'POST',
+                    data: { email: email, password: pass },
+                    success: function(result) {
+                        if (result.success) {
+                            toastr.success("Đăng nhập thành công", "Thành Công");
+                            setTimeout(function () {
+                                window.location.href = '/Admin/Home/Index';
+                            }, 2000);
+                            
+                        } else {
+                            toastr.error("Kiểm tra lại email, mật khẩu", "Không Thành Công");
+                            setTimeout(function () {
+                                location.reload();
+                            }, 2000);
+                            //window.location.reload(); // Tải lại trang
+                        }
+                    },
+                    error: function() {
+                        // Xử lý khi có lỗi xảy ra trong quá trình gửi yêu cầu
+                        alert('Đã xảy ra lỗi!');
+                    }
+                });
+
+            });
+        });
+    </script>
+</body>
+</html>

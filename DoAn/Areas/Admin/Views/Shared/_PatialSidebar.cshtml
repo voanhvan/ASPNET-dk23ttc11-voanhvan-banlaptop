@@ -1,0 +1,91 @@
+﻿<!-- Sidebar -->
+<div class="sidebar">
+    <!-- Sidebar user (optional) -->
+    @if (Session["hotenadmin"] != null)
+    {
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            @*<div class="image">
+                <img src="~/Content/Client/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>*@
+            <div class="info">
+                <a href="#" class="d-block">@Session["hotenadmin"]</a>
+            </div>
+        </div>
+    }
+
+
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+                <a href="~/Admin/Home" class="nav-link">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Trang chủ
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="~/admin/DonHangs" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Đơn hàng
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="~/admin/hangsps" class="nav-link">
+                    <i class="nav-icon fas fa-columns"></i>
+                    <p>
+                        Quản lý hãng sản phẩm
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="~/admin/sanphams" class="nav-link">
+                    <i class="nav-icon fas fa-columns"></i>
+                    <p>
+                        Quản lý sản phẩm
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="~/admin/khachhangs" class="nav-link">
+                    <i class="nav-icon fas fa-columns"></i>
+                    <p>
+                        Quản lý tài khoản
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="~/admin/tintucs" class="nav-link">
+                    <i class="nav-icon fas fa-book"></i>
+                    <p>
+                        Bài viết
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../widgets.html" class="nav-link">
+
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Admin/Login/DangXuat" class="nav-link">
+                    <i class="nav-icon fa fa-sign-out-alt"></i>
+                    <p>
+                        Đăng xuất
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+</div>
+
+

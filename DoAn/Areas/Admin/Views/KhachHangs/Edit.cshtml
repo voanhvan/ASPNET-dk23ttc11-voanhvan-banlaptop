@@ -1,0 +1,146 @@
+﻿@model DoAn.Models.KhachHang
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/Admin/Home" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/admin/khachhangs" class="nav-link">Tài khoản</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Chỉnh sửa</a>
+        </li>
+    </ul>
+}
+
+<!-- Content Wrapper. Contains page content -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                @*<h1>Thêm mới danh mục</h1>*@
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/admin/khachhangs">Quản lý tài khoản</a></li>
+                    <li class="breadcrumb-item active">Chỉnh sửa</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Thông tin tài khoản sửa</h3>
+        </div>
+
+        <div class="card-body">
+            <div class="bs-stepper-content">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <!-- your steps content here -->
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.makhachhang)
+
+                        <div class="form-group">
+                            <label>Họ tên</label>
+                            @Html.TextBoxFor(x => x.hoten, new { @class = "form-control", @placeholder = "Họ tên" })
+                            @Html.ValidationMessageFor(x => x.hoten, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Điện thoại</label>
+                            @Html.TextBoxFor(x => x.dienthoai, new { @class = "form-control", @placeholder = "Điện thoại" })
+                            @Html.ValidationMessageFor(x => x.dienthoai, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            @Html.TextBoxFor(x => x.email, new { @class = "form-control", @placeholder = "Email" })
+                            @Html.ValidationMessageFor(x => x.email, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mật khẩu</label>
+                            @Html.TextBoxFor(x => x.matkhau, new { @class = "form-control", @placeholder = "Mật khẩu" })
+                            @Html.ValidationMessageFor(x => x.matkhau, null, new { @class = "text-danger" })
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Địa chỉ</label>
+                            @Html.TextBoxFor(x => x.diachi, new { @class = "form-control", @placeholder = "Địa chỉ" })
+                            @Html.ValidationMessageFor(x => x.diachi, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tỉnh</label>
+                            @Html.TextBoxFor(x => x.tinh, new { @class = "form-control", @placeholder = "Tỉnh / Thành phố" })
+                            @Html.ValidationMessageFor(x => x.tinh, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Huyện</label>
+                            @Html.TextBoxFor(x => x.huyen, new { @class = "form-control", @placeholder = "Quận / Huyện" })
+                            @Html.ValidationMessageFor(x => x.huyen, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Xã</label>
+                            @Html.TextBoxFor(x => x.xa, new { @class = "form-control", @placeholder = "Phường / Xã" })
+                            @Html.ValidationMessageFor(x => x.xa, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Thôn</label>
+                            @Html.TextBoxFor(x => x.thon, new { @class = "form-control", @placeholder = "Thôn, ngõ, số nhà, đường" })
+                            @Html.ValidationMessageFor(x => x.thon, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Chức vụ</label>
+                            <div class="checkbox">
+                                @Html.DropDownListFor(model => model.chucvu, (IEnumerable<SelectListItem>)ViewBag.chucvuList,
+                                        htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.chucvu, "", new { @class = "text-danger" })
+                                @*@Html.EditorFor(model => model.chucvu, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.chucvu, "", new { @class = "text-danger" })*@
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Trạng thái</label>
+                            <div class="checkbox">
+                                @Html.DropDownListFor(model => model.trangthai, (IEnumerable<SelectListItem>)ViewBag.TrangThaiList,
+                                        htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.trangthai, "", new { @class = "text-danger" })
+                                @*@Html.EditorFor(model => model.trangthai, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.trangthai, "", new { @class = "text-danger" })*@
+                            </div>
+                        </div>
+                    </div>
+                    <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+                        <a href="/admin/khachhangs" class="btn btn-danger">Quay lại</a>
+                        <input type="submit" class="btn btn-primary" value="Sửa">
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

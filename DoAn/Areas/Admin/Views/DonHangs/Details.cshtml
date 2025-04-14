@@ -1,0 +1,185 @@
+﻿@model DoAn.Models.DonHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var dsDHCT = (List<DoAn.Models.DonHangChiTiet>)ViewBag.DHCT;
+    decimal total = 0;
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/Admin/Home" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/donhangs" class="nav-link">Đơn hàng</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="navbar-search-block">
+                <form class="form-inline">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" type="search" placeholder="Từ khóa tìm kiếm" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/Admin/donhangs">Quản lý đơn hàng</a></li>
+                    <li class="breadcrumb-item active">Chi tiết</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3><b>Chi Tiết Đơn Hàng</b></h3>
+        </div>
+        <div class="card-header">
+            <h3 class="card-title"><b>Thông tin người nhận:</b></h3>
+        </div>
+        <div class="card-body">
+            <table style="width: 1100px;">
+                <tr>
+                    <td><h5><b>Họ tên người nhận:</b></h5></td>
+                    <td><h5>@Html.DisplayFor(model => model.KhachHang.hoten)</h5></td>
+                    <td style="width: 20px;"></td>
+                    <td><h5><b>Ngày đặt:</b></h5></td>
+                    <td><h5>@Model.ngaydat.ToString("dd/MM/yyyy")</h5></td>
+                </tr>
+                <tr>
+                    <td><h5><b>Số điện thoại:</b></h5></td>
+                    <td><h5>@Html.DisplayFor(model => model.dienthoai)</h5></td>
+                    <td></td>
+                    <td><h5><b>Ngày nhận:</b></h5></td>
+                    <td><h5>@Model.ngaynhan.ToString("dd/MM/yyyy")</h5></td>
+                </tr>
+                <tr>
+                    <td><h5><b>Địa chỉ:</b></h5></td>
+                    <td><h5>@Html.DisplayFor(model => model.diachi)</h5></td>
+                    <td></td>
+                    <td><h5><b>Hình thức thanh toán:</b></h5></td>
+                    <td><h5>@Html.DisplayFor(model => model.thanhtoan)</h5></td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-header">
+            <h3 class="card-title"><b>Danh sách các mặt hàng:</b></h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Hình ảnh</th>
+                        <th style="width: 500px">Tên sản phẩm</th>
+                        <th>Model sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                @if (Model != null)
+                {
+                    var i = 1;
+                    foreach (var item in dsDHCT)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                <img src="@Url.Content("~/wwwroot/images/" + item.SanPham.hinhanh)" class="img-rounded" width="100" height="100" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SanPham.tensp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SanPham.model)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.soluong)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SanPham.giaban) đ
+                            </td>
+                            <td>
+                                @{
+                                    var thanhtien = item.soluong * item.SanPham.giaban;
+                                    total = total + (decimal)thanhtien;
+                                    decimal t = (decimal)thanhtien;
+                                    string formattedPrice = t.ToString("#,##0");
+
+                                }
+                                @formattedPrice đ
+                            </td>
+                        </tr>
+                        i++;
+
+                    }
+                }
+            </table>
+        </div>
+        <div>
+            <table class="table">
+                <tr>
+                    @{
+                        string formattedTotal = total.ToString("#,##0");
+                    }
+                    <td style="padding-left: 84%;"><h4 class="btn btn-primary text-center">Tổng tiền: @formattedTotal đ</h4></td>
+                </tr>
+            </table>
+        </div>
+        <a style="width: 100px; margin: 0 0 10px 20px;" class="btn btn-danger" href="/admin/donhangs">Quay lại</a>
+    </div>
+</section>
+
