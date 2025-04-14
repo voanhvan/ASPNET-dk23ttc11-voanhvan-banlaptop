@@ -1,5 +1,11 @@
-Chọn đề tài xây dựng website chuyên đề ASP.Net
-Soạn lý do chọn đề tài
-Mở đầu
-Chương 1: Tổng quan đề tài
-Chương 2: Phân tích thiết kế hệ thống
+# Báo Cáo Tiến Độ Dự Án - Website Bán Laptop
+**Dự án**: Xây Dựng Website Bán Laptop cho Công Ty An Phát Computer  
+**Sinh viên thực hiện**: Võ Anh Văn  
+**Giáo viên hướng dẫn**: Ths. Đoàn Phước Miền  
+**Ngày báo cáo**: Tháng 03 năm 2025
+## 1. Tóm Tắt Dự Án
+Dự án xây dựng website bán laptop cho công ty An Phát Computer nhằm tạo ra một nền tảng bán hàng trực tuyến cho các sản phẩm laptop. Website sẽ có các tính năng chính như quản lý sản phẩm, giỏ hàng, đơn hàng và thanh toán, phục vụ cả phía khách hàng và quản trị viên. Dự án sử dụng ngôn ngữ lập trình C# và framework ASP.NET MVC, với cơ sở dữ liệu được lưu trữ trên SQL Server.
+## 2. Mục Tiêu Dự Án
+- **Làm chủ ngôn ngữ C# và ASP.NET MVC**: Phát triển một ứng dụng web hoàn chỉnh từ đầu đến cuối.
+- **Phân tích và thiết kế hệ thống**: Đảm bảo rằng ứng dụng đáp ứng các yêu cầu nghiệp vụ và mang lại trải nghiệm người dùng tốt.
+- **Kiểm thử và triển khai**: Đảm bảo hệ thống hoạt động ổn định, bảo mật và tối ưu.
