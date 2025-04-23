@@ -9,3 +9,29 @@ Dự án xây dựng website bán laptop cho công ty An Phát Computer nhằm t
 - **Làm chủ ngôn ngữ C# và ASP.NET MVC**: Phát triển một ứng dụng web hoàn chỉnh từ đầu đến cuối.
 - **Phân tích và thiết kế hệ thống**: Đảm bảo rằng ứng dụng đáp ứng các yêu cầu nghiệp vụ và mang lại trải nghiệm người dùng tốt.
 - **Kiểm thử và triển khai**: Đảm bảo hệ thống hoạt động ổn định, bảo mật và tối ưu.
+## 3. Tiến Độ Hoàn Thành
+
+### 3.1. Hoàn Thành
+- **Phân tích yêu cầu và khảo sát**:
+  - Khảo sát các cửa hàng bán laptop và khảo sát yêu cầu nghiệp vụ từ khách hàng.
+  - Phân tích các yêu cầu tính năng cơ bản như quản lý sản phẩm, giỏ hàng, đơn hàng và thanh toán.
+  
+- **Thiết kế hệ thống**:
+  - Đã hoàn thành các biểu đồ use case và phân tích chức năng hệ thống.
+  - Đã thiết kế cơ sở dữ liệu với các bảng: Khách hàng, Sản phẩm, Giỏ hàng, Đơn hàng, Hãng sản phẩm.
+
+- **Phát triển giao diện**:
+  - Giao diện trang chủ, trang đăng ký, đăng nhập, giỏ hàng, thanh toán đã được hoàn thành.
+  - Giao diện quản trị viên cho phép quản lý sản phẩm, đơn hàng và thông tin khách hàng.
+
+### 3.2. Đang Thực Hiện
+- **Kiểm thử hệ thống**:
+  - Hiện tại, đang thực hiện kiểm thử chức năng của hệ thống bao gồm đăng nhập, đăng ký, thêm vào giỏ hàng, đặt hàng và thanh toán.
+  - Đang tiến hành kiểm thử giao diện trên các trình duyệt khác nhau để đảm bảo tính tương thích.
+
+### 3.3. Chưa Hoàn Thành
+- **Thanh toán online**:
+  - Chức năng thanh toán online chưa được triển khai hoàn thiện. Đây là tính năng quan trọng trong các website thương mại điện tử và đang được lên kế hoạch phát triển trong giai đoạn tiếp theo.
+  
+- **Tối ưu hóa hiệu suất**:
+  - Tốc độ xử lý của website vẫn chưa tối ưu, đặc biệt trong quá trình xử lý giỏ hàng và thanh toán. Cần thực hiện tối ưu hóa các truy vấn cơ sở dữ liệu và các phương thức xử lý.
