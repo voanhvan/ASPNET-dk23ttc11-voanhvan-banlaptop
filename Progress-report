@@ -2,7 +2,7 @@
 **Dự án**: Xây Dựng Website Bán Laptop cho Công Ty An Phát Computer  
 **Sinh viên thực hiện**: Võ Anh Văn  
 **Giáo viên hướng dẫn**: Ths. Đoàn Phước Miền  
-**Ngày báo cáo**: Tháng 03 năm 2025
+**Ngày làm báo cáo**: Tháng 03 năm 2025
 ## 1. Tóm Tắt Dự Án
 Dự án xây dựng website bán laptop cho công ty An Phát Computer nhằm tạo ra một nền tảng bán hàng trực tuyến cho các sản phẩm laptop. Website sẽ có các tính năng chính như quản lý sản phẩm, giỏ hàng, đơn hàng và thanh toán, phục vụ cả phía khách hàng và quản trị viên. Dự án sử dụng ngôn ngữ lập trình C# và framework ASP.NET MVC, với cơ sở dữ liệu được lưu trữ trên SQL Server.
 ## 2. Mục Tiêu Dự Án
