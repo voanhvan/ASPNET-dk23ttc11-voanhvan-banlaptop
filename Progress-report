@@ -35,3 +35,13 @@ Dự án xây dựng website bán laptop cho công ty An Phát Computer nhằm t
   
 - **Tối ưu hóa hiệu suất**:
   - Tốc độ xử lý của website vẫn chưa tối ưu, đặc biệt trong quá trình xử lý giỏ hàng và thanh toán. Cần thực hiện tối ưu hóa các truy vấn cơ sở dữ liệu và các phương thức xử lý.
+## 4. Các Thách Thức và Giải Pháp
+
+### 4.1. Thách Thức
+- **Khó khăn trong việc tối ưu hóa tốc độ xử lý**:
+  - Việc xử lý thông tin sản phẩm, giỏ hàng và đơn hàng còn gặp vấn đề về hiệu suất khi có nhiều yêu cầu đồng thời.
+  
+### 4.2. Giải Pháp
+- **Cải thiện hiệu suất**:
+  - Tăng cường việc sử dụng caching để giảm thiểu việc truy vấn cơ sở dữ liệu.
+  - Tối ưu hóa các query SQL và sử dụng lazy loading cho các dữ liệu không cần thiết phải tải ngay lập tức.
