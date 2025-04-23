@@ -15,6 +15,10 @@ Website này cung cấp các tính năng như:
   - Xem chi tiết sản phẩm với thông tin mô tả, giá cả và hình ảnh.
   - Thêm sản phẩm vào giỏ hàng và thanh toán.
 - **Chức năng quản trị viên**:
-  - Quản lý tài khoản nhân viên và quản lý sản phẩm.
+  - Quản lý quản lý sản phẩm.
   - Quản lý đơn hàng và doanh thu.
   - Quản lý các hãng sản phẩm.
+## Công Nghệ Sử Dụng
+**Ngôn ngữ lập trình**: C#
+- **Framework**: ASP.NET MVC
+- **Cơ sở dữ liệu**: SQL Server
