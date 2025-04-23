@@ -19,6 +19,6 @@ Website này cung cấp các tính năng như:
   - Quản lý đơn hàng và doanh thu.
   - Quản lý các hãng sản phẩm.
 ## Công Nghệ Sử Dụng
-**Ngôn ngữ lập trình**: C#
+- **Ngôn ngữ lập trình**: C#
 - **Framework**: ASP.NET MVC
 - **Cơ sở dữ liệu**: SQL Server
