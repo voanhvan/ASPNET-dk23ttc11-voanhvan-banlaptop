@@ -1,0 +1,215 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>An Phát Computer</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    @*<link rel="apple-touch-icon" sizes="180x180" href="~/Content/assets/images/icons/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="~/Content/assets/images/icons/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/icons/favicon-16x16.png">
+        <link rel="manifest" href="~/Content/assets/images/icons/site.html">
+        <link rel="mask-icon" href="~/Content/assets/images/icons/safari-pinned-tab.svg" color="#666666">
+        <link rel="shortcut icon" href="~/Content/assets/images/icons/favicon.ico">
+        <meta name="apple-mobile-web-app-title" content="Molla">
+        <meta name="application-name" content="Molla">
+        <meta name="msapplication-TileColor" content="#cc9966">
+        <meta name="msapplication-config" content="~/Content/assets/images/icons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="~/Content/assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css">*@
+    <link rel="shortcut icon" href="~/wwwroot/images/anphatsafari.png">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="~/Content/assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="~/Content/assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugins/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugins/jquery.countdown.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="~/Content/assets/css/style.css">
+    <link rel="stylesheet" href="~/Content/assets/css/skins/skin-demo-13.css">
+    <link rel="stylesheet" href="~/Content/assets/css/demos/demo-13.css">
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="page-wrapper">
+        <main class="main">
+            <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="height: 100vh; background-image: url('/wwwroot/images/login.jpg')">
+                <div class="container">
+                    <div class="form-box">
+                        <div class="form-tab">
+                            <ul class="nav nav-pills nav-fill" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab" aria-controls="signin-2" aria-selected="false">ĐĂNG NHẬP</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="register-tab-2" data-toggle="tab" href="#register-2" role="tab" aria-controls="register-2" aria-selected="true">ĐĂNG KÝ</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade active show" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
+                                    <form action="~/Login/DangNhap" method="post">
+                                        <div class="form-group">
+                                            <label for="singin-email-2">Địa chỉ email *</label>
+                                            <input type="text" class="form-control" id="singin-email-2" name="email" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="singin-password-2">Mật khẩu *</label>
+                                            <input type="password" class="form-control" id="singin-password-2" name="password" required>
+                                        </div>
+
+                                        <div class="form-footer">
+                                            <button type="submit" class="btn btn-outline-primary-2">
+                                                <span>Đăng Nhập</span>
+                                                <i class="icon-long-arrow-right"></i>
+                                            </button>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="signin-remember-2">
+                                                <label class="custom-control-label" for="signin-remember-2">Nhớ tài khoản</label>
+                                            </div>
+
+                                            <a href="#" class="forgot-link">Quên mật khẩu?</a>
+                                        </div>
+                                    </form>
+                                    <div class="form-choice">
+                                        <p class="text-center">Hoặc</p>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <a href="" class="btn btn-login btn-g">
+                                                    <i class="icon-google"></i>
+                                                    Đăng nhập Google
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <a href="#" class="btn btn-login btn-f">
+                                                    <i class="icon-facebook-f"></i>
+                                                    Đăng nhập với Facebook
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade " id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
+                                    <form action="">
+                                        <div class="form-group">
+                                            <label for="register-email-2">Họ tên *</label>
+                                            <input type="text" class="form-control" id="rten" name="rhoten" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="register-email-2">Địa chỉ email *</label>
+                                            <input type="email" class="form-control" id="remail" name="remail" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="register-password-2">Mật khẩu *</label>
+                                            <input type="password" class="form-control" id="rpass" name="rpassword" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="register-password-2">Xác thực mật khẩu *</label>
+                                            <input type="password" class="form-control" id="rrpass" name="rrpassword" required>
+                                        </div>
+
+                                        <div class="form-footer">
+                                            <button type="submit" id="dangky" class="btn btn-outline-primary-2">
+                                                <span>Đăng Ký</span>
+                                                <i class="icon-long-arrow-right"></i>
+                                            </button>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="register-policy-2" required>
+                                                <label class="custom-control-label" for="register-policy-2">Tôi đồng ý với <a href="#">Chính sách bảo mật</a> *</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="form-choice">
+                                        <p class="text-center">Hoặc</p>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <a href="#" class="btn btn-login btn-g">
+                                                    <i class="icon-google"></i>
+                                                    Đăng nhập Google
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <a href="#" class="btn btn-login  btn-f">
+                                                    <i class="icon-facebook-f"></i>
+                                                    Đăng nhập Facebook
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/js/jquery.hoverIntent.min.js"></script>
+    <script src="~/Content/assets/js/jquery.waypoints.min.js"></script>
+    <script src="~/Content/assets/js/superfish.min.js"></script>
+    <script src="~/Content/assets/js/owl.carousel.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap-input-spinner.js"></script>
+    <script src="~/Content/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/assets/js/jquery.plugin.min.js"></script>
+    <script src="~/Content/assets/js/jquery.countdown.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="~/Content/assets/js/main.js"></script>
+    <script src="~/Content/assets/js/demos/demo-13.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        $('#dangky').click(function (event) {
+            event.preventDefault();
+            var hoten = document.getElementById('rten').value;
+            var mail = document.getElementById('remail').value;
+            var pass1 = document.getElementById('rpass').value;
+            var pass2 = document.getElementById('rrpass').value;
+            console.log(hoten, mail, pass1, pass2);
+            $.ajax({
+                url: '@Url.Action("DangKy", "Login")',
+                type: 'POST',
+                data: { hoten: hoten, email: mail, pass: pass1, repass: pass2 },
+                success: function(result) {
+                    if (result.success) {
+                        toastr.success("Đăng ký thành công", "Thành Công");
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 2000);
+
+                    } else {
+                        toastr.error("Mật khẩu chưa trùng khớp", "Không Thành Công", { timeOut: 3000 });
+                    }
+                },
+                error: function() {
+                    alert('Đã xảy ra lỗi!');
+                }
+            });
+
+        });
+    });
+    </script>
+    <script src="~/Scripts/toastr.js"></script>
+</body>
+</html>

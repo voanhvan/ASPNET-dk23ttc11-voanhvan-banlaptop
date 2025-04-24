@@ -1,0 +1,219 @@
+﻿@*@model IEnumerable<DoAn.Models.DonHang>*@
+@model PagedList.IPagedList<DoAn.Models.DonHang>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/Admin/Home" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/donhangs" class="nav-link">Đơn hàng</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="navbar-search-block">
+                <form class="form-inline" action="/admin/donhangs/index" method="post">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" name="search" value="@ViewBag.CurrentFilter" placeholder="Từ khóa tìm kiếm" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/Admin/Home">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Quản lý đơn hàng</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"><b>Danh sách đơn hàng</b></h3>
+
+            @*<div class="card-tools">
+                <a href="/admin/donhangs/create" class="btn btn-primary">Thêm mới</a>
+            </div>*@
+        </div>
+        <div class="card-body">
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ tên</th>
+                        <th>Điện thoại</th>
+                        <th style="width: 350px">Địa chỉ</th>
+                        <th>Ngày đặt</th>
+                        <th>HTTT</th>
+                        <th>Trạng thái</th>
+                        <th>Thực hiện</th>
+                    </tr>
+                </thead>
+                @if (Model != null && Model.Any())
+                {
+                    var i = 1;
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.KhachHang.hoten)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.dienthoai)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.diachi)
+                            </td>
+                            <td>
+                                @item.ngaydat.ToString("dd/MM/yyyy")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.thanhtoan)
+                            </td>
+
+
+                            @if(item.trangthai == false)
+                            {
+                                <td class="text-primary"><a class="update-order" data-orderid="@item.madonhang">Đang giao</a></td>
+                            }
+                            else if (item.trangthai == true)
+                            {
+                                <td class="text-success">Đã giao</td>
+                            }
+                            else
+                            {
+                                <td class="text-danger">Đã Hủy</td>
+                            }
+                            <td>
+                                <a href="/admin/donhangs/details/@item.madonhang" class="btn btn-primary">Chi tiết</a>
+                                @*<a href="/admin/donhangs/edit/@item.madonhang" class="btn btn-primary">Sửa</a>
+            <input type="button" value="Xóa" data-id="@item.madonhang" class="delete btn btn-danger" />*@
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4">Không có bản ghi nào!!!</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <!-- /.card-body -->
+        <!--<div class="card-footer">
+
+        </div>-->
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+    <div class="text-center">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+
+</section>
+<style>
+    a:hover{
+        cursor: pointer;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $('.delete').click(function () {
+            var id = $(this).data('id');
+            if (confirm("Bạn có chắc muốn xóa hãng sản phẩm này?")) {
+                $.ajax({
+                    url: '@Url.Action("DeleteConfirmed", "DonHangs")',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (result) {
+                        if (result.success) {
+                            alert("Xóa thành công.");
+                            window.location.reload();
+                        } else {
+                            alert("Xóa thất bại.")
+                        }
+                    },
+                    error: function () {
+                        alert("Có lỗi xảy ra!");
+                    }
+                });
+            }
+        });
+
+        $('.update-order').click(function () {
+            var idOrder = $(this).data('orderid');
+            //console.log(idOrder);
+            $.ajax({
+                url: '@Url.Action("UpdateOrder", "DonHangs")',
+                type: 'POST',
+                data: { id: idOrder },
+                success: function (result) {
+                    if (result.success) {
+                        window.location.reload();
+                    } 
+                },
+                error: function () {
+                    alert("Có lỗi xảy ra!");
+                }
+            });
+        });
+    });
+</script>

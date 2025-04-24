@@ -1,0 +1,282 @@
+﻿@*@model IEnumerable<DoAn.Models.SanPham>*@
+@model PagedList.IPagedList<DoAn.Models.SanPham>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/Admin/Home" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/sanphams" class="nav-link">Sản phẩm</a>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="navbar-search-block">
+                <form class="form-inline" action="/admin/sanphams/index" method="post">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" name="search" value="@ViewBag.CurrentFilter" placeholder="Từ khóa tìm kiếm" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/Admin/Home">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Quản lý sản phẩm</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"><b>Danh sách sản phẩm</b></h3>
+
+            <div class="card-tools">
+                <a href="/admin/sanphams/create" class="btn btn-primary">Thêm mới</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Hình ảnh</th>
+                        <th style="width: 400px">Tên sản phẩm</th>
+                        <th>Hãng sản phẩm</th>
+                        <th style="width: 250px">CPU</th>
+                        <th>Giá bán</th>
+                        <th>Số lượng</th>
+                        <th>Trạng thái</th>
+                        <th>Thực hiện</th>
+                    </tr>
+                </thead>
+                @if (Model != null && Model.Any())
+                {
+                    var i = 1;
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                <img src="@Url.Content("~/wwwroot/images/" + item.hinhanh)" class="img-rounded" width="100" height="100" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tensp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HangSP.tenhang)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CPU)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.giaban) đ
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.soluong)
+                            </td>
+                            @if (item.trangthai == true)
+                            {
+                                <td>
+                                    Hiện
+                                </td>
+                            }
+                            else
+                            {
+                                <td>Ẩn</td>
+                            }
+                        <td>
+                            <a href="/admin/sanphams/details/@item.masp" class="btn btn-dark">Chi tiết</a>
+                            <a href="/admin/sanphams/edit/@item.masp" class="btn btn-primary">Sửa</a>
+                            <input type="button" data-product-id="@item.masp" value="Xóa" class="delete btn btn-danger" />
+                            @*<a href="/admin/sanphams/delete/@item.masp" class="btn btn-danger">Xóa</a>
+                            <button class="delete-button" data-product-id="@item.masp">Xóa sản phẩm</button>*@
+                        </td>
+                        </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4">Không có bản ghi nào!!!</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="text-center">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</section>
+
+
+<script>
+$(document).ready(function() {
+    $('.delete').click(function() {
+        var productId = $(this).data('product-id');
+
+        // Hiển thị cửa sổ xác nhận
+        if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
+            // Gửi yêu cầu xóa sản phẩm bằng AJAX
+            $.ajax({
+                url: '@Url.Action("DeleteConfirmed", "SanPhams")',
+                type: 'POST',
+                data: { id: productId },
+                success: function(result) {
+                    if (result.success) {
+                        // Xử lý khi xóa thành công, ví dụ hiển thị thông báo, cập nhật giao diện, v.v.
+                        alert('Xóa sản phẩm thành công!');
+                        window.location.reload(); // Tải lại trang
+                    } else {
+                        // Xử lý khi xóa thất bại
+                        alert('Xóa sản phẩm thất bại!');
+                    }
+                },
+                error: function() {
+                    // Xử lý khi có lỗi xảy ra trong quá trình gửi yêu cầu
+                    alert('Đã xảy ra lỗi!');
+                }
+            });
+        }
+    });
+});
+</script>
+
+@*<script>
+$(document).ready(function() {
+    $('#delete-button').click(function() {
+        var productId = $(this).data('product-id');
+
+        // Hiển thị cửa sổ xác nhận tùy chỉnh
+        showConfirmationDialog("Bạn có chắc chắn muốn xóa sản phẩm này?", function() {
+            // Gửi yêu cầu xóa sản phẩm bằng AJAX
+            $.ajax({
+                url: '@Url.Action("DeleteConfirmed", "SanPhams")',
+                type: 'POST',
+                data: { id: productId },
+                success: function(result) {
+                    if (result.success) {
+                        // Xử lý khi xóa thành công, ví dụ hiển thị thông báo, cập nhật giao diện, v.v.
+                        showSuccessAlert('Xóa sản phẩm thành công!');
+                        window.location.reload(); // Tải lại trang
+                    } else {
+                        // Xử lý khi xóa thất bại
+                        showErrorAlert('Xóa sản phẩm thất bại!');
+                    }
+                },
+                error: function() {
+                    // Xử lý khi có lỗi xảy ra trong quá trình gửi yêu cầu
+                    showErrorAlert('Đã xảy ra lỗi!');
+                }
+            });
+        });
+    });
+});
+
+function showConfirmationDialog(message, callback) {
+    $('<div></div>')
+        .html(message)
+        .dialog({
+            title: 'Xác nhận',
+            resizable: false,
+            modal: true,
+            buttons: {
+                "Có": function() {
+                    $(this).dialog('close');
+                    callback();
+                },
+                "Không": function() {
+                    $(this).dialog('close');
+                }
+            }
+        });
+}
+
+function showSuccessAlert(message) {
+    $('<div></div>')
+        .html(message)
+        .dialog({
+            title: 'Thành công',
+            resizable: false,
+            modal: true,
+            buttons: {
+                OK: function() {
+                    $(this).dialog('close');
+                }
+            }
+        });
+}
+
+function showErrorAlert(message) {
+    $('<div></div>')
+        .html(message)
+        .dialog({
+            title: 'Lỗi',
+            resizable: false,
+            modal: true,
+            buttons: {
+                OK: function() {
+                    $(this).dialog('close');
+                }
+            }
+        });
+}
+</script>*@

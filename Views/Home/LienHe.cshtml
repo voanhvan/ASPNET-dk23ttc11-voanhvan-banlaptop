@@ -1,0 +1,312 @@
+﻿@{
+    ViewBag.Title = "Liên Hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="container py-5">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb bg-light p-3 rounded shadow-sm">
+            <li class="breadcrumb-item"><a href="~/Home" class="text-decoration-none">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Liên Hệ</li>
+        </ol>
+    </nav>
+
+    <!-- Hero Banner -->
+    <div class="contact-hero position-relative rounded overflow-hidden shadow-sm mb-5">
+        <img src="https://dasm.vn/wp-content/uploads/2023/12/Banner-lienhe.jpg" alt="Contact Us" class="img-fluid w-100">
+        <div class="contact-hero-content position-absolute text-white text-center p-4" style="top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; flex-direction: column; justify-content: center;">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Contact Information -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="card border-0 shadow-sm rounded-lg h-100">
+                <div class="card-body p-4">
+                    <h3 class="card-title border-bottom pb-3 mb-4">Thông Tin Liên Hệ</h3>
+
+                    <div class="contact-info mb-4">
+                        <h5 class="mb-3">Trụ Sở Chính</h5>
+                        <ul class="list-unstyled">
+                            <li class="d-flex mb-3">
+                                <div class="icon-wrapper mr-3">
+                                    <i class="icon-map-marker text-primary" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0">123 Đường Lê Lợi, Quận 1, TP. Hồ Chí Minh</p>
+                                </div>
+                            </li>
+                            <li class="d-flex mb-3">
+                                <div class="icon-wrapper mr-3">
+                                    <i class="icon-phone text-primary" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0"><a href="tel:+84123456789" class="text-decoration-none">+84 123 456 789</a></p>
+                                </div>
+                            </li>
+                            <li class="d-flex mb-3">
+                                <div class="icon-wrapper mr-3">
+                                    <i class="icon-envelope text-primary" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0"><a href="mailto:info@anphatcomputer.com" class="text-decoration-none">info@anphatcomputer.com</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-info mb-4">
+                        <h5 class="mb-3">Giờ Làm Việc</h5>
+                        <ul class="list-unstyled">
+                            <li class="d-flex mb-3">
+                                <div class="icon-wrapper mr-3">
+                                    <i class="icon-clock-o text-primary" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-1"><strong>Thứ Hai - Thứ Bảy:</strong></p>
+                                    <p class="mb-0">8:00 - 20:00</p>
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <div class="icon-wrapper mr-3">
+                                    <i class="icon-calendar text-primary" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-1"><strong>Chủ Nhật:</strong></p>
+                                    <p class="mb-0">9:00 - 18:00</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="social-media">
+                        <h5 class="mb-3">Kết Nối Với Chúng Tôi</h5>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon mr-2 bg-primary text-white d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px;">
+                                <i class="icon-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon mr-2 bg-info text-white d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px;">
+                                <i class="icon-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon mr-2 bg-danger text-white d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px;">
+                                <i class="icon-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon bg-success text-white d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px;">
+                                <i class="icon-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-lg">
+                <div class="card-body p-4">
+                    <h3 class="card-title border-bottom pb-3 mb-4">Gửi Tin Nhắn Cho Chúng Tôi</h3>
+
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="name">Họ và tên <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" placeholder="Nhập họ và tên" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="email">Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ email" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="phone">Số điện thoại</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="subject">Chủ đề <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="subject" placeholder="Nhập chủ đề" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="message">Nội dung tin nhắn <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Nhập nội dung tin nhắn" required></textarea>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="privacy-policy" required>
+                                <label class="custom-control-label" for="privacy-policy">
+                                    Tôi đồng ý với <a href="#" class="text-decoration-none">chính sách bảo mật</a> của công ty
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="icon-paper-plane mr-2"></i>Gửi Tin Nhắn
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <section class="map-section mt-5">
+        <h3 class="mb-4">Vị Trí Của Chúng Tôi</h3>
+        <div class="map-container rounded shadow-sm overflow-hidden">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197956!2d106.69901937465353!3d10.77267358931046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4670702e31%3A0xa5777fb3a5bb9972!2zMTIzIMSQLiBMw6ogTOG7o2ksIELhur9uIE5naMOpLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1682329456429!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Store Locations -->
+    <section class="store-locations mt-5 mb-5">
+        <h3 class="mb-4">Hệ Thống Cửa Hàng</h3>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 shadow-sm rounded-lg h-100">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="~/Content/assets/images/stores/img-1.jpg" alt="Store Location" class="img-fluid h-100 object-cover" onerror="this.src='/placeholder.svg?height=300&width=300'">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-3">Chi Nhánh Quận 1</h5>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="icon-map-marker text-primary mr-2"></i>123 Đường Lê Lợi, Quận 1, TP. HCM</li>
+                                    <li class="mb-2"><i class="icon-phone text-primary mr-2"></i><a href="tel:+84123456789" class="text-decoration-none">+84 123 456 789</a></li>
+                                    <li class="mb-2"><i class="icon-clock-o text-primary mr-2"></i>8:00 - 20:00 (Thứ Hai - Thứ Bảy)</li>
+                                    <li><i class="icon-calendar text-primary mr-2"></i>9:00 - 18:00 (Chủ Nhật)</li>
+                                </ul>
+                                <a href="https://goo.gl/maps/1234" class="btn btn-outline-primary" target="_blank">
+                                    <i class="icon-map mr-2"></i>Xem Bản Đồ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 shadow-sm rounded-lg h-100">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="~/Content/assets/images/stores/img-2.jpg" alt="Store Location" class="img-fluid h-100 object-cover" onerror="this.src='/placeholder.svg?height=300&width=300'">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-3">Chi Nhánh Quận 7</h5>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="icon-map-marker text-primary mr-2"></i>456 Nguyễn Thị Thập, Quận 7, TP. HCM</li>
+                                    <li class="mb-2"><i class="icon-phone text-primary mr-2"></i><a href="tel:+84987654321" class="text-decoration-none">+84 987 654 321</a></li>
+                                    <li class="mb-2"><i class="icon-clock-o text-primary mr-2"></i>8:00 - 20:00 (Thứ Hai - Thứ Bảy)</li>
+                                    <li><i class="icon-calendar text-primary mr-2"></i>9:00 - 18:00 (Chủ Nhật)</li>
+                                </ul>
+                                <a href="https://goo.gl/maps/5678" class="btn btn-outline-primary" target="_blank">
+                                    <i class="icon-map mr-2"></i>Xem Bản Đồ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section mb-5">
+        <div class="card border-0 shadow-sm rounded-lg">
+            <div class="card-body p-4">
+                <h3 class="card-title border-bottom pb-3 mb-4">Câu Hỏi Thường Gặp</h3>
+
+                <div class="accordion" id="faqAccordion">
+                    <div class="card border-0 mb-3">
+                        <div class="card-header bg-light p-0" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left text-decoration-none text-dark p-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="icon-plus mr-2 text-primary"></i>Chính sách bảo hành của cửa hàng như thế nào?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                            <div class="card-body p-3">
+                                Tất cả sản phẩm của chúng tôi đều được bảo hành chính hãng từ 12 đến 36 tháng tùy theo sản phẩm. Ngoài ra, khách hàng còn được hưởng chính sách bảo hành 1 đổi 1 trong vòng 30 ngày đầu tiên nếu sản phẩm gặp lỗi từ nhà sản xuất.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 mb-3">
+                        <div class="card-header bg-light p-0" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left text-decoration-none text-dark p-3 collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="icon-plus mr-2 text-primary"></i>Thời gian giao hàng mất bao lâu?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                            <div class="card-body p-3">
+                                Thời gian giao hàng phụ thuộc vào khu vực của bạn. Đối với nội thành TP.HCM, thời gian giao hàng thường từ 1-2 ngày. Đối với các tỉnh thành khác, thời gian giao hàng từ 3-5 ngày làm việc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 mb-3">
+                        <div class="card-header bg-light p-0" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left text-decoration-none text-dark p-3 collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="icon-plus mr-2 text-primary"></i>Có thể thanh toán bằng những hình thức nào?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                            <div class="card-body p-3">
+                                Chúng tôi chấp nhận nhiều hình thức thanh toán khác nhau bao gồm: thanh toán khi nhận hàng (COD), chuyển khoản ngân hàng, thanh toán qua thẻ tín dụng/ghi nợ, và các ví điện tử như Momo, ZaloPay, VNPay.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0">
+                        <div class="card-header bg-light p-0" id="headingFour">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left text-decoration-none text-dark p-3 collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="icon-plus mr-2 text-primary"></i>Làm thế nào để theo dõi đơn hàng của tôi?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                            <div class="card-body p-3">
+                                Bạn có thể theo dõi đơn hàng của mình bằng cách đăng nhập vào tài khoản trên website của chúng tôi và vào mục "Đơn hàng của tôi". Ngoài ra, bạn sẽ nhận được email và tin nhắn SMS thông báo về trạng thái đơn hàng khi có cập nhật mới.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    $(document).ready(function () {
+        // Toggle icon in FAQ accordion
+        $('.btn-link').on('click', function () {
+            var icon = $(this).find('i');
+            if (icon.hasClass('icon-plus')) {
+                icon.removeClass('icon-plus').addClass('icon-minus');
+            } else {
+                icon.removeClass('icon-minus').addClass('icon-plus');
+            }
+        });
+    });
+</script>
+

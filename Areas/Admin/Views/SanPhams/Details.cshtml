@@ -1,0 +1,268 @@
+﻿@model DoAn.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/Admin/Home" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/sanphams" class="nav-link">Sản phẩm</a>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="navbar-search-block">
+                <form class="form-inline">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" type="search" placeholder="Từ khóa tìm kiếm" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/Admin/sanphams">Quản lý sản phẩm</a></li>
+                    <li class="breadcrumb-item active">Chi tiết</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+<section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"><b>Thông tin sản phẩm</b></h3>
+
+            <div class="card-tools">
+                <a href="/admin/sanphams/edit/@Model.masp" class="btn btn-primary">Chỉnh sửa</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-5" style="display: flex; justify-content: center; align-items: center;">
+                    <img src="@Url.Content("~/wwwroot/images/" + Model.hinhanh)" class="img-rounded" width="500" height="500" />
+                </div>
+                <div class="col-sm-7" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <h3 class="card-title"><b>Thông số kỹ thuật</b></h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td>Tên sản phẩm</td>
+                                        <td>@Model.tensp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Model sản phẩm</td>
+                                        <td>@Model.model</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Màn hình</td>
+                                        <td>@Model.manhinh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hệ điều hành</td>
+                                        <td>@Model.OS</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RAM</td>
+                                        <td>@Model.RAM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bộ nhớ</td>
+                                        <td>@Model.SSD</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CPU</td>
+                                        <td>@Model.CPU</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Card đồ họa</td>
+                                        <td>@Model.carddohoa</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div>
+        <h4>SanPham</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.HangSP.tenhang)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HangSP.tenhang)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tensp)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tensp)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.hinhanh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.hinhanh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.soluong)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.soluong)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.giaban)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.giaban)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mota)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mota)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CPU)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CPU)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RAM)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RAM)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OS)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OS)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.manhinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.manhinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.carddohoa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.carddohoa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SSD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SSD)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.trangthai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.trangthai)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.masp }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

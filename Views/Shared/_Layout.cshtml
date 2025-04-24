@@ -1,0 +1,406 @@
+﻿@{ 
+    List<DoAn.Models.HangSP> ds = Session["dshang"] as List<DoAn.Models.HangSP>;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- molla/index-13.html  22 Apr 2025 09:59:06 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AN PHÁT Computer</title>
+    <meta name="keywords" content="An Phát Computer">
+    <meta name="description" content="An Phát Computer">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/wwwroot/images/anphatsafari.png">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="~/Content/assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="~/Content/assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugins/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugins/jquery.countdown.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="~/Content/assets/css/style.css">
+    <link rel="stylesheet" href="~/Content/assets/css/skins/skin-demo-13.css">
+    <link rel="stylesheet" href="~/Content/assets/css/demos/demo-13.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header header-10 header-intro-clearance">
+            <div class="header-top" style="height: 40px; line-height: 40px;">
+                <div class="container">
+                    <div class="header-left">
+                        <a href="tel:#"><i class="icon-phone"></i>Support: +0123 456 789</a>
+                    </div><!-- End .header-left -->
+
+                    <div class="header-right">
+                        <ul class="top-menu">
+                            <li>
+                                <ul>
+                                    <li>
+                                        @if (Session["ma"] == null)
+                                        {
+                                            <div class="login">
+                                                <a href="~/Login">Đăng Nhập / Đăng Ký</a>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="header-dropdown">
+                                                <a href="#">Xin Chào: @Session["hoten"]</a>
+                                                <div class="header-menu">
+                                                    <ul>
+                                                        <li><a href="~/KhachHangs/UserInfor">Thông Tin Tài Khoản</a></li>
+                                                        <li><a href="~/DonHangs">Đơn Mua</a></li>
+                                                        <li><a href="~/Login/SignOut">Đăng Xuất</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        }
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul><!-- End .top-menu -->
+                    </div><!-- End .header-right -->
+                </div><!-- End .container -->
+            </div><!-- End .header-top -->
+
+            <div class="header-middle">
+                <div class="container">
+                    <div class="header-left">
+                        <button class="mobile-menu-toggler">
+                            <span class="sr-only">Toggle mobile menu</span>
+                            <i class="icon-bars"></i>
+                        </button>
+
+                        <a href="~/Home" class="logo">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuz7mnT_GLWngDL5vhGSmhqIhPqWSvaGK4y7Mz6141myvJRDxRc0NH3fAUkZgfdvdzPXE&usqp=CAU" alt="Molla Logo" width="130" height="25">
+                        </a>
+                    </div>
+
+                    <div class="header-center">
+                        <div class="header-search header-search-extended header-search-visible header-search-no-radius d-none d-lg-block">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
+                            <form action="/SanPhams/Index" method="post">
+                                <div class="header-search-wrapper search-wrapper-wide">
+
+                                    <label for="timkiem" class="sr-only">Search</label>
+                                    <input type="search" class="form-control" name="timkiem" id="q" placeholder="Từ khóa tìm kiếm" value="@ViewBag.searchString" required>
+                                    <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="header-dropdown-link">
+
+                            <a href="wishlist.html" class="wishlist-link">
+                                <i class="icon-heart-o"></i>
+                                <span class="wishlist-count">0</span>
+                                <span class="wishlist-txt">Yêu thích</span>
+                            </a>
+
+
+                            <div class="dropdown cart-dropdown">
+                                @if (Session["ma"] == null)
+                                {
+                                    //string returnUrl = Url.Action("Index", "GioHangs");
+                                    //Session["ReturnUrl"] = returnUrl;
+                                    <a href="~/Login/Index" class="dropdown-toggle">  
+                                        <i class="icon-shopping-cart"></i>
+                                        <span class="cart-count">0</span>
+                                        <span class="cart-txt">Giỏ hàng</span>
+                                    </a>
+                                }
+                                else
+                                {
+
+                                    <a href="~/GioHangs/Index" class="dropdown-toggle">
+                                        <i class="icon-shopping-cart"></i>
+                                        <span class="cart-count">@Session["giohang"]</span>
+                                        <span class="cart-txt">Giỏ hàng</span>
+                                    </a>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bottom sticky-header">
+                <div class="container">
+                    <div class="header-left">
+                        <div class="dropdown category-dropdown is-on" data-visible="true">
+                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-display="static" title="Browse Categories">
+                                DANH MỤC SẢN PHẨM
+                            </a>
+                            <div class="dropdown-menu">
+                                <nav class="side-nav">
+                                    <ul class="menu-vertical sf-arrows">
+                                        <li class="megamenu-container">
+                                            <a class="sf-with-ul" href="#">Laptop & Desktop</a>
+
+                                            <div class="megamenu">
+                                                <div class="row no-gutters">
+                                                    <div class="col">
+                                                        @*col-md-8*@
+                                                        <div class="menu-col">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    @*col-md-6*@
+                                                                    <div class="menu-title">Theo Hãng</div>
+                                                                    <ul>
+                                                                        @foreach (var item in ds)
+                                                                        {
+                                                                            <li><a href="#">@item.tenhang</a></li>
+                                                                        }
+                                                                    </ul>
+                                                                </div>
+
+                                                                <div class="col">
+                                                                    @*col-md-6*@
+                                                                    <div class="menu-title">Theo Giá</div>
+                                                                    <ul>
+                                                                        <li><a href="#">Từ thấp đến cao</a></li>
+                                                                        <li><a href="#">Từ cao đến thấp</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="megamenu-container">
+                                            <a class="sf-with-ul" href="#">Phụ Kiện Máy Tính</a>
+
+                                            <div class="megamenu">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-8">
+                                                        <div class="menu-col">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="menu-title">Màn hình</div>
+                                                                    <ul>
+                                                                        <li><a href="#">Màn hình LED/LCD</a></li>
+                                                                        <li><a href="#">Màn hình chơi game</a></li>
+                                                                        <li><a href="#">Màn hình cảm ứng</a></li>
+                                                                    </ul>
+
+                                                                    <div class="menu-title">Tai nghe</div>
+                                                                    <ul>
+                                                                        <li><a href="#"</a>Tai nghe có dây</li>
+                                                                        <li><a href="#">Tai nghe không dây</a></li>
+                                                                        <li><a href="#">Tai nghe chơi game</a></li>
+                                                                        <li><a href="#">Tai nghe Bluetooth</a></li>
+                                           
+                                                                    </ul>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="menu-title">Chuột </div>
+                                                                    <ul>
+                                                                        <li><a href="#">Chuột quang</a></li>
+                                                                        <li><a href="#">Chuột không dây</a></li>
+                                                                        <li><a href="#">Chuột chơi game</a></li>
+                                                                        <li><a href="#">Chuột có dây</a></li>
+                                                                
+                                                                    </ul>
+
+                                                                    <div class="menu-title">Bàn phím</div>
+                                                                    <ul>
+                                                                        <li><a href="#">Bàn phím cơ</a></li>
+                                                                        <li><a href="#">Bàn phím không dây</a></li>
+                                                                        <li><a href="#">Bàn phím chơi game</a></li>
+                                                                        <li><a href="#">Bàn phím có dây</a></li>
+                                                                        
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                       
+                                       
+                                        <li><a href="#">Thiết Bị Mạng</a></li>
+                                        <li><a href="#">Loa, Tai Nghe, Webcam</a></li>
+                                        <li><a href="#">Phụ Kiện Laptop, PC Khác</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="header-center">
+                        <nav class="main-nav">
+                            <ul class="menu sf-arrows">
+                                <li>
+                                    <a href="~/Home">TRANG CHỦ</a>
+                                </li>
+                                <li id="navbar">
+                                    <a href="~/SanPhams">SẢN PHẨM</a>
+                                </li>
+                                @*<li id="navbar">
+                                    <a href="~/Home/DetailProduct">GIỚI THIỆU</a>
+                                </li>*@
+                                <li id="navbar">
+                                    <a href="~/Home/TinTuc">TIN TỨC</a>
+                                </li>
+                                <li id="navbar">
+                                    <a href="~/Home/LienHe">LIêN HỆ</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+
+        <footer class="footer footer-2">
+            <div class="icon-boxes-container">
+                <div class="container">
+                </div>
+            </div>
+
+            <div class="footer-middle border-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="widget widget-about">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuz7mnT_GLWngDL5vhGSmhqIhPqWSvaGK4y7Mz6141myvJRDxRc0NH3fAUkZgfdvdzPXE&usqp=CAU" class="footer-logo" alt="Footer Logo" width="105" height="25">
+                                <p>
+                                    Thành lập vào ngày 15/07/2005, sau hơn 20 năm hình thành và phát triển, G Technology đã không ngừng đổi mới, mở rộng hoạt động kinh doanh và khẳng định vị thế là một trong những doanh nghiệp hàng đầu trong lĩnh vực phân phối và bán lẻ các sản phẩm công nghệ, thiết bị điện tử và giải pháp văn phòng hiện đại.
+                                    <br /><br />
+                                    Trụ sở: Tầng 8, Tòa nhà Sapphire, Số 22 đường Hoa Lan, Phường 2, Quận Phú Nhuận, Thành phố Hồ Chí Minh, Việt Nam.
+                                    Điện thoại: 028 38383838
+                                    Email: contact@minhtamtech.vn
+                                </p>
+
+                                <div class="widget-about-info">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-4">
+                                            <span class="widget-about-title">Có câu hỏi? Gọi cho chúng tôi 24/7</span>
+                                            <a href="tel:012345678">+0123 456 789</a>
+                                        </div>
+                                        <div class="col-sm-6 col-md-8">
+                                            <span class="widget-about-title">Phương Thức Thanh Toán</span>
+                                            <figure class="footer-payments">
+                                                <img src="~/Content/assets/images/payments.png" alt="Payment methods" width="272" height="20">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-2">
+                            <div class="widget">
+                                <h4 class="widget-title">THÔNG TIN CỬA HÀNG</h4>
+
+                                <ul class="widget-list">
+                                    <li><a href="about.html">Về An Phát</a></li>
+                                    <li><a href="#">Mua hàng trên An Phát Website</a></li>
+                                    <li><a href="#">Câu hỏi thương gặp</a></li>
+                                    <li><a href="#">Liên Hệ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-2">
+                            <div class="widget">
+                                <h4 class="widget-title">DỊCH VỤ KHÁCH HÀNG</h4>
+                                <ul class="widget-list">
+                                    <li><a href="#">Phương thức thanh toán</a></li>
+                                    <li><a href="#">Trả hàng - Hoàn tiền</a></li>
+                                    <li><a href="#">Vận chuyển</a></li>
+                                    <li><a href="#">Các điều khoản & Điều kiện</a></li>
+                                    <li><a href="#">Chính sách bảo mật</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-2">
+                            <div class="widget">
+                                <h4 class="widget-title">TÀI KHOẢN CỦA TÔI</h4>
+
+                                <ul class="widget-list">
+                                    @if (Session["ma"] == null)
+                                    {
+                                        <li><a href="~/Login">Đăng Nhập</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="~/Login/SignOut">Đăng Xuất</a></li>
+                                    }
+                                    <li><a href="cart.html">Giỏ Hàng</a></li>
+                                    <li><a href="#">Sản Phẩm Yêu Thích</a></li>
+                                    <li><a href="#">Theo Dõi Đơn Hàng</a></li>
+                                    <li><a href="#">Giúp Đỡ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <p class="footer-copyright">Đồ Án Chuyên đề ASP.Net - Create By Võ Anh Văn </p>
+
+                    <div class="social-icons social-icons-color">
+                        <span class="social-label">Social Media</span>
+                        <a href="#" class="social-icon social-facebook" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
+                        <a href="#" class="social-icon social-twitter" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+                        <a href="#" class="social-icon social-instagram" title="Instagram" target="_blank"><i class="icon-instagram"></i></a>
+                        <a href="#" class="social-icon social-youtube" title="Youtube" target="_blank"><i class="icon-youtube"></i></a>
+                        <a href="#" class="social-icon social-pinterest" title="Pinterest" target="_blank"><i class="icon-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
+    <!-- Plugins JS File -->
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/js/jquery.hoverIntent.min.js"></script>
+    <script src="~/Content/assets/js/jquery.waypoints.min.js"></script>
+    <script src="~/Content/assets/js/superfish.min.js"></script>
+    <script src="~/Content/assets/js/owl.carousel.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap-input-spinner.js"></script>
+    <script src="~/Content/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/assets/js/jquery.plugin.min.js"></script>
+    <script src="~/Content/assets/js/jquery.countdown.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+
+    <!-- Main JS File -->
+    <script src="~/Content/assets/js/main.js"></script>
+    <script src="~/Content/assets/js/demos/demo-13.js"></script>
+    <script src="~/Scripts/toastr.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,483 @@
+﻿@*@model IEnumerable<DoAn.Models.SanPham>*@
+@model PagedList.IPagedList<DoAn.Models.SanPham>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<DoAn.Models.HangSP> dshang = ViewBag.dsh;
+    List<int> hangsps = ViewBag.brands as List<int>;
+}
+
+<main class="main">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
+        <div class="container">
+            <ol class="breadcrumb">
+
+                <li class="breadcrumb-item active" aria-current="page"></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-xl-4-5col">
+                    <div class="products mb-3">
+                        <div class="row productlist">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="product">
+                                        <figure class="product-media">
+                                            @*<span class="product-label label-new">New</span>*@
+                                            <a href="~/SanPhams/Details/@item.masp">
+                                                <img src="@Url.Content("~/wwwroot/images/" + item.hinhanh)" alt="Product image" class="product-image">
+                                            </a>
+
+                                            <div class="product-action-vertical">
+                                                <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>Yêu thích</span></a>
+                                            </div>
+
+                                            <div class="product-action">
+                                                <button id="addcart" data-product-id="@item.masp" class="btn-product btn-cart" title="Add to cart">
+                                                    <span>Thêm vào giỏ</span>
+                                                </button>
+
+                                            </div>
+                                        </figure>
+
+                                        <div class="product-body">
+                                            <h3 class="product-title"><a href="~/SanPhams/Details/@item.masp">@item.tensp</a></h3>
+                                            <div class="product-price">
+                                                @{
+                                                    decimal giaban = (decimal)item.giaban;
+                                                    string formattedPrice = giaban.ToString("#,##0");
+                                                }
+                                                @formattedPrice đ
+                                            </div>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-val" style="width: 80%;"></div>
+                                                </div>
+                                                <span class="ratings-text">( 12 Reviews )</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <nav aria-label="Page navigation" class="text-center">
+                        <ul class="pagination">
+                            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                                <a class="page-link page-link-prev" href="@Url.Action("Index", new { page = Model.PageNumber - 1})" aria-label="Previous" tabindex="-1" aria-disabled="@(Model.HasPreviousPage ? "false" : "true")">
+                                    <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>Trang trước
+                                </a>
+                            </li>
+
+                            @for (int i = 1; i <= Model.PageCount; i++)
+                            {
+                                <li class="page-item @(i == Model.PageNumber ? "active" : "")" aria-current="page">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                </li>
+                            }
+
+                            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                                <a class="page-link page-link-next" href="@Url.Action("Index", new { page = Model.PageNumber + 1})" aria-label="Next">
+                                    Trang sau <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <aside class="col-lg-3 col-xl-5col order-lg-first">
+                    <div class="sidebar sidebar-shop">
+                        <div class="widget widget-categories">
+                            <h3 class="widget-title">DANH MỤC</h3>
+
+                            <div class="widget-body">
+                                <div class="accordion" id="widget-cat-acc">
+                                    <div class="acc-item">
+                                        <h5>
+                                            <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-2">
+                                                Laptop
+                                            </a>
+                                        </h5>
+                                        <div id="collapse-1" class="collapse" data-parent="#widget-cat-acc">
+                                            <div class="collapse-wrap">
+                                                <ul>
+                                                    <li><a href="#">Laptop Văn Phòng</a></li>
+                                                    <li><a href="#">Laptop Sinh Viên</a></li>
+                                                    <li><a href="#">Laptop Cho Lập Trình</a></li>
+                                                    <li><a href="#">Laptop Cho Kế Toán</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="acc-item">
+                                        <h5>
+                                            <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                                Linh Kiện Máy Tính
+                                            </a>
+                                        </h5>
+                                        <div id="collapse-2" class="collapse" data-parent="#widget-cat-acc">
+                                            <div class="collapse-wrap">
+                                                <ul>
+                                                    <li><a href="#">CPU - Bộ Vi Xử Lý</a></li>
+                                                    <li><a href="#">VGA - Card Màn Hình</a></li>
+                                                    <li><a href="#">RAM - Bộ Nhớ Trong</a></li>
+                                                    <li><a href="#">HDD - Ổ Cứng</a></li>
+                                                    <li><a href="#">Case - Vỏ Máy Tính</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="acc-item">
+                                        <h5>
+                                            <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                                                Thiết Bị Văn Phòng
+                                            </a>
+                                        </h5>
+                                        <div id="collapse-3" class="collapse" data-parent="#widget-cat-acc">
+                                            <div class="collapse-wrap">
+                                                <ul>
+                                                    <li><a href="#">Máy In</a></li>
+                                                    <li><a href="#">Máy Scan</a></li>
+                                                    <li><a href="#">Máy Chiếu</a></li>
+                                                    <li><a href="#">Máy Hủy Tài Liệu</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="acc-item">
+                                        <h5>
+                                            <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                                                Phụ Kiện
+                                            </a>
+                                        </h5>
+                                        <div id="collapse-4" class="collapse" data-parent="#widget-cat-acc">
+                                            <div class="collapse-wrap">
+                                                <ul>
+                                                    <li><a href="#">Bộ Chia VGA</a></li>
+                                                    <li><a href="#">Bộ Chia HDMI</a></li>
+                                                    <li><a href="#">Giá Đỡ Laptop</a></li>
+                                                    <li><a href="#">Túi Chống Sốc</a></li>
+                                                    <li><a href="#">Đế Tản Nhiệt</a></li>
+                                                    <li><a href="#">Các Loại Dây Cap</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <h3 class="widget-title">Hãng Sản Xuất</h3>
+
+                            <div class="widget-body">
+                                <div class="filter-items">
+                                    @foreach (var item in dshang)
+                                    {
+                                        <div class="filter-item">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="@item.mahang">
+                                                <label class="custom-control-label" for="@item.mahang">@item.tenhang</label>
+                                            </div>
+                                        </div>
+                                    }
+                                    @*<div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="brand-1">
+                                            <label class="custom-control-label" for="brand-1">Dell</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="brand-2">
+                                            <label class="custom-control-label" for="brand-2">Lenovo</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="brand-3">
+                                            <label class="custom-control-label" for="brand-3">HP</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="brand-4">
+                                            <label class="custom-control-label" for="brand-4">LG</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="brand-5">
+                                            <label class="custom-control-label" for="brand-5">Acer</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="brand-6">
+                                            <label class="custom-control-label" for="brand-6">Asus</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="brand-7">
+                                            <label class="custom-control-label" for="brand-7">Huawei</label>
+                                        </div>
+                                    </div>*@
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <h3 class="widget-title">Giá Bán</h3>
+                            <form>
+                                <div class="widget-body">
+                                    <div class="filter-items">
+                                        <div class="filter-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="price-1" name="filter-price">
+                                                <label class="custom-control-label" for="price-1">Từ thấp đến cao</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="filter-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="price-2" name="filter-price">
+                                                <label class="custom-control-label" for="price-2">Từ cao đến thấp</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="filter-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="price-3" name="filter-price">
+                                                <label class="custom-control-label" for="price-3">Dười 10 triệu</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="filter-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="price-4" name="filter-price">
+                                                <label class="custom-control-label" for="price-4">10 - 15 triệu</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="filter-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="price-5" name="filter-price">
+                                                <label class="custom-control-label" for="price-5">15 - 20 triệu</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="filter-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="price-6" name="filter-price">
+                                                <label class="custom-control-label" for="price-6">20 - 25 triệu</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="filter-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="price-7" name="filter-price">
+                                                <label class="custom-control-label" for="price-7">trên 25 triệu</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="widget">
+                            <h3 class="widget-title">Đánh Giá</h3>
+
+                            <div class="widget-body">
+                                <div class="filter-items">
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="cus-rating-1">
+                                            <label class="custom-control-label" for="cus-rating-1">
+                                                <span class="ratings-container">
+                                                    <span class="ratings">
+                                                        <span class="ratings-val" style="width: 100%;"></span>
+                                                    </span>
+                                                    <span class="ratings-text">( 24 )</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="cus-rating-2">
+                                            <label class="custom-control-label" for="cus-rating-2">
+                                                <span class="ratings-container">
+                                                    <span class="ratings">
+                                                        <span class="ratings-val" style="width: 80%;"></span>
+                                                    </span>
+                                                    <span class="ratings-text">( 8 )</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="cus-rating-3">
+                                            <label class="custom-control-label" for="cus-rating-3">
+                                                <span class="ratings-container">
+                                                    <span class="ratings">
+                                                        <span class="ratings-val" style="width: 60%;"></span>
+                                                    </span>
+                                                    <span class="ratings-text">( 5 )</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="cus-rating-4">
+                                            <label class="custom-control-label" for="cus-rating-4">
+                                                <span class="ratings-container">
+                                                    <span class="ratings">
+                                                        <span class="ratings-val" style="width: 40%;"></span>
+                                                    </span>
+                                                    <span class="ratings-text">( 1 )</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="cus-rating-5">
+                                            <label class="custom-control-label" for="cus-rating-5">
+                                                <span class="ratings-container">
+                                                    <span class="ratings">
+                                                        <span class="ratings-val" style="width: 20%;"></span>
+                                                    </span>
+                                                    <span class="ratings-text">( 3 )</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget widget-banner-sidebar">
+                            @*<div class="banner-sidebar-title">ad banner 218 x 430px</div>*@
+                            <h3 class="widget-title">Sản Phẩm Bán Chạy</h3>
+
+                            <div class="banner-sidebar banner-overlay">
+                                <a href="#">
+                                    <img src="~/Content/assets/images/demos/demo-13/banners/banner-6.jpg" alt="banner">
+                                </a>
+                            </div>
+                        </div>
+                    </div> 
+                </aside> 
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    $(document).ready(function() {
+        $('.btn-cart').click(function() {
+            var productId = $(this).data('product-id');
+            $.ajax({
+                url: '@Url.Action("AddCart", "SanPhams")',
+                type: 'POST',
+                data: { id: productId },
+                success: function (result) {
+                    if (result.success) {
+                        toastr.success("Thêm vào giỏ hàng thành công", "Thành Công");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1500);
+                    } else {
+                        window.location.href = '/Login/Index';
+                    }
+                },
+                error: function() {
+                    alert('Đã xảy ra lỗi!');
+                }
+            });
+
+        });
+    });
+
+    $(document).ready(function () {
+        $('input[type="checkbox"]').click(function () {
+            getProductsByBrand();
+        });
+
+        $('input[type="radio"]').click(function () {
+            getProductsByBrand();
+        });
+
+    });
+
+    function getProductsByBrand() {
+        var selectedBrands = [];
+        // Lặp qua tất cả các checkbox đã chọn
+        $('input[type="checkbox"]:checked').each(function () {
+            // Lấy id của checkbox đã chọn và thêm vào mảng
+            selectedBrands.push($(this).attr('id'));
+            //console.log(selectedBrands);
+        });
+        var selectedPrice = $('input[type="radio"]:checked').attr('id');
+
+        $.ajax({
+            url: '/SanPhams/Index',
+            type: 'POST',
+            data: { brands: selectedBrands, price: selectedPrice }, 
+            success: function (response) {
+                var productListHtml = $(response).find('.productlist').html()
+                $('.products .row').html(productListHtml);
+                //console.log(response);
+                //console.log(productListHtml); 
+            },
+            error: function () {
+                alert("LỖI");
+            }
+        });
+    }
+
+    //function getProductsByPrice() {
+    //    var selectedPrice = $('input[type="radio"]:checked').attr('id');
+    //    //console.log(selectedPrice);
+    //    $.ajax({
+    //        url: '/SanPhams/Index',
+    //        type: 'POST',
+    //        data: { price: selectedPrice },
+    //        success: function (response) {
+    //            var productListHtml = $(response).find('.productlist').html()
+    //            $('.products .row').html(productListHtml);
+    //            //console.log(response);
+    //            console.log(productListHtml);
+    //        },
+    //        error: function () {
+    //            alert("LỖI");
+    //        }
+    //    });
+    //}
+</script>

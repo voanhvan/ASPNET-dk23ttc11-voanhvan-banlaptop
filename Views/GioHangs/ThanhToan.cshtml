@@ -1,0 +1,207 @@
+﻿@model IEnumerable<DoAn.Models.GioHang>
+@{
+    ViewBag.Title = "ThanhToan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    decimal TienHang = 0;
+    var kh = ViewBag.taikhoan as DoAn.Models.KhachHang;
+}
+
+<main class="main">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Home/Index">Trang Chủ</a></li>
+                <li class="breadcrumb-item"><a href="~/SanPhams">Sản Phẩm</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Thanh Toán</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="checkout">
+            <div class="container">
+                <form action="/GioHangs/DatHang" method="post">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h2 class="checkout-title">Chi Tiết Thanh Toán</h2>
+
+                            <label>Họ Tên *</label>
+                            <input type="text" class="form-control" value="@kh.hoten">
+
+                            <label>Email *</label>
+                            <input type="email" class="form-control" required value="@kh.email">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Tỉnh / Thành Phố *</label>
+                                    <input type="text" class="form-control" name="thanhpho" required value="   @kh.tinh">
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label>Quận / Huyện *</label>
+                                    <input type="text" class="form-control" name="huyen" required value="@kh.huyen">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Phường / Xã *</label>
+                                    <input type="text" class="form-control" name="phuongxa" required value="@kh.xa">
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label>Điện Thoại *</label>
+                                    <input type="tel" class="form-control" name="dienthoai" required value="@kh.dienthoai">
+                                </div>
+                            </div>
+
+                            <label>Địa Chỉ Cụ Thể (số nhà, thôn, xóm)</label>
+                            <input type="text" name="diachi" class="form-control" value="@kh.thon" required>
+
+
+                            <label>Ghi Chú</label>
+                            <textarea class="form-control" cols="30" rows="4" placeholder="Ghi chú"></textarea>
+                        </div>
+                        <aside class="col-lg-5">
+                            <div class="summary">
+                                <h3 class="summary-title">Sản Phẩm Mua</h3>
+                                <table class="table table-summary">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên Sản Phẩm</th>
+                                            <th>Thành Tiền</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @if (Model != null && Model.Any())
+                                        {
+                                            foreach (var item in Model)
+                                            {
+                                                if (item.makhachhang.ToString() == Session["ma"].ToString())
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <a href="~/SanPhams/Details/@item.masp">
+                                                                @{ 
+                                                                    string tensp = item.SanPham.tensp.ToString();
+                                                                    string[] ten = tensp.Split('(');
+                                                                    string tengon = ten[0];
+                                                                }
+                                                                @tengon
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            @{
+                                                                decimal gia = (decimal)item.SanPham.giaban * item.soluong;
+                                                                string giaformat = gia.ToString("#,##0");
+                                                                TienHang = TienHang + gia;
+                                                            }
+                                                            @giaformat
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        }
+                                        
+                                        <tr>
+                                            <td><b>Phí Vận chuyển:</b></td>
+                                            <td>Miễn phí</td>
+                                        </tr>
+                                        <tr class="summary-total">
+                                            <td>Tổng:</td>
+                                            <td>
+                                                @{    
+                                                    string TienHangformat = TienHang.ToString("#,##0");
+                                                }
+                                                @TienHangformat
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="accordion-summary" id="accordion-payment">
+                                    @*<div class="card">
+                                        <div class="card-header" id="heading-1">
+                                            <h2 class="card-title">
+                                                <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                                                    Thanh toán khi nhận hàng
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapse-1" class="collapse show" aria-labelledby="heading-1" data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                Vui lòng thanh toán @TienHangformat khi nhận hàng, cho phép <b>kiểm tra sản phẩm</b> trước khi thanh toán.
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                                    <div class="card">
+                                        <div class="card-header" id="heading-2">
+                                           
+                                                <br />
+                                                <input type="radio" id="cod" name="thanhtoan" value="cod" checked> <span style="font-size: 15px; margin-left: 3px;"> Thanh Toán Khi Nhận Hàng</span>
+                                                <br />
+                                                <br />
+                                                <input type="radio" id="banking" name="thanhtoan" value="banking"> <span style="font-size: 15px; margin-left: 3px;">Thanh Toán Bằn Thẻ Tín Dụng VnPay</span>
+
+                                         
+                                            @*<h2 class="card-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                                    <input type="radio" id="cod" name="thanhtoan" checked> Thanh Toán Khi Nhận Hàng
+                                                    <br />
+                                                    <input type="radio" id="online" name="thanhtoan"> Thanh Toán Bằn Thẻ Tín Dụng VnPay
+                                                </a>
+                                            </h2>*@
+                                        </div>
+                                        @*<div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+                                            </div>
+                                        </div>*@
+                                    </div>
+
+                                    @*<div class="card">
+                                        <div class="card-header" id="heading-3">
+                                            <h2 class="card-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                                                    Thanh toán bằng Viettell Pay
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                                    <!--<div class="card">
+                                        <div class="card-header" id="heading-5">
+                                            <h2 class="card-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                                                    Credit Card (Stripe)
+                                                    <img src="~/Content/assets/images/payments-summary.png" alt="payments cards">
+                                                </a>
+                                            </h2>
+                                        </div>--><!-- End .card-header -->
+                                        <!--<div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit ame.
+                                            </div>--><!-- End .card-body -->
+                                        <!--</div>--><!-- End .collapse -->
+                                    <!--</div>--><!-- End .card -->
+                                </div><!-- End .accordion -->
+
+                                <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+                                    <span class="btn-text">ĐẶT HÀNG</span>
+                                    <span class="btn-hover-text">ĐẶT HÀNG</span>
+                                </button>
+                            </div>
+                        </aside>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

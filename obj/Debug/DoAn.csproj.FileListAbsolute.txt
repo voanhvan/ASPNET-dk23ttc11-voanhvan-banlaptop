@@ -1,0 +1,267 @@
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\DoAn.dll.config
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\DoAn.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\DoAn.pdb
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\csc.exe
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\csc.exe.config
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\csc.rsp
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\csi.exe
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\csi.exe.config
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\csi.rsp
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.AppContext.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Console.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.IO.Compression.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Net.Http.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Net.Sockets.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.ValueTuple.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Xml.XPath.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\vbc.exe
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\vbc.exe.config
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\vbc.rsp
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\VBCSCompiler.exe
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\Antlr3.Runtime.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\EntityFramework.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\EntityFramework.SqlServer.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\Newtonsoft.Json.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.Helpers.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.Mvc.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.Optimization.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.Razor.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.WebPages.Deployment.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.WebPages.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.WebPages.Razor.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\WebGrease.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\EntityFramework.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\EntityFramework.SqlServer.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.Helpers.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.Mvc.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.Optimization.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.Razor.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.WebPages.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.WebPages.Deployment.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\System.Web.WebPages.Razor.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\Newtonsoft.Json.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\Antlr3.Runtime.pdb
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\obj\Debug\DoAn.csproj.CopyComplete
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\obj\Debug\DoAn.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\obj\Debug\DoAn.pdb
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\PagedList.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\PagedList.Mvc.dll
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\PagedList.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\bin\PagedList.Mvc.xml
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\obj\Debug\DoAn.Migrations.updatemodel.resources
+C:\Users\DUY DUC\Desktop\ĐỒ ÁN\ChuongTrinh\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\DoAn.dll.config
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\DoAn.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\DoAn.pdb
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\csc.exe
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\csc.exe.config
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\csc.rsp
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\csi.exe
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\csi.exe.config
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\csi.rsp
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.CSharp.Core.targets
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.Managed.Core.targets
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.VisualBasic.Core.targets
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\Microsoft.Win32.Primitives.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.AppContext.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Collections.Immutable.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Console.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Diagnostics.StackTrace.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Globalization.Calendars.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.IO.Compression.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.IO.Compression.ZipFile.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.IO.FileSystem.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.IO.FileSystem.Primitives.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Net.Http.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Net.Sockets.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Reflection.Metadata.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Security.Cryptography.Encoding.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Security.Cryptography.Primitives.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Text.Encoding.CodePages.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Threading.Tasks.Extensions.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.ValueTuple.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Xml.ReaderWriter.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Xml.XmlDocument.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Xml.XPath.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\System.Xml.XPath.XDocument.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\vbc.exe
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\vbc.exe.config
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\vbc.rsp
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\VBCSCompiler.exe
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\roslyn\VBCSCompiler.exe.config
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\Antlr3.Runtime.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\EntityFramework.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\EntityFramework.SqlServer.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\Microsoft.Web.Infrastructure.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\Newtonsoft.Json.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\PagedList.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\PagedList.Mvc.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.Helpers.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.Mvc.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.Optimization.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.Razor.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.WebPages.Deployment.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.WebPages.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.WebPages.Razor.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\WebGrease.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\EntityFramework.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\EntityFramework.SqlServer.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\PagedList.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\PagedList.Mvc.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.Helpers.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.Mvc.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.Optimization.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.Razor.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.WebPages.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.WebPages.Deployment.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\System.Web.WebPages.Razor.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\Newtonsoft.Json.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\Antlr3.Runtime.pdb
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\obj\Debug\DoAn.Migrations.updatemodel.resources
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\obj\Debug\DoAn.csproj.Up2Date
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\obj\Debug\DoAn.dll
+I:\Lập Trình Web ASPN\DOANTOTNGHIEP2024-main\ChuongTrinh\DoAn\obj\Debug\DoAn.pdb
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\DoAn.dll.config
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\DoAn.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\DoAn.pdb
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\csc.exe
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\csc.exe.config
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\csc.rsp
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\csi.exe
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\csi.exe.config
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\csi.rsp
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.Managed.Core.targets
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.AppContext.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Collections.Immutable.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Console.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Globalization.Calendars.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.IO.Compression.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.IO.FileSystem.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Net.Http.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Net.Sockets.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Reflection.Metadata.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.ValueTuple.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Xml.XmlDocument.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Xml.XPath.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\vbc.exe
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\vbc.exe.config
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\vbc.rsp
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\VBCSCompiler.exe
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\roslyn\VBCSCompiler.exe.config
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\Antlr3.Runtime.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\EntityFramework.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\EntityFramework.SqlServer.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\Microsoft.Web.Infrastructure.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\Newtonsoft.Json.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\PagedList.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\PagedList.Mvc.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.Helpers.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.Mvc.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.Optimization.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.Razor.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.WebPages.Deployment.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.WebPages.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.WebPages.Razor.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\WebGrease.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\EntityFramework.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\EntityFramework.SqlServer.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\PagedList.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\PagedList.Mvc.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.Helpers.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.Mvc.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.Optimization.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.Razor.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.WebPages.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.WebPages.Deployment.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\System.Web.WebPages.Razor.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\Newtonsoft.Json.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\Antlr3.Runtime.pdb
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\obj\Debug\DoAn.Migrations.updatemodel.resources
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\obj\Debug\DoAn.csproj.CopyComplete
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\obj\Debug\DoAn.dll
+D:\V\LIEN THONG DH CNTT\ASP\voanhvan\DoAn\obj\Debug\DoAn.pdb

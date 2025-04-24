@@ -1,0 +1,291 @@
+﻿@{
+    ViewBag.Title = "Tin Tức";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="container py-5">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb bg-light p-3 rounded shadow-sm">
+            <li class="breadcrumb-item"><a href="~/Home" class="text-decoration-none">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tin Tức</li>
+        </ol>
+    </nav>
+
+    <!-- Featured Article -->
+    <section class="featured-article mb-5">
+        <div class="card border-0 shadow-sm rounded-lg overflow-hidden">
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <img src="https://leopardjsc.com/images/hinhanh_113.jpg" alt="Featured Article" class="img-fluid h-100 object-cover">
+                </div>
+                <div class="col-lg-6">
+                    <div class="card-body p-4 p-lg-5">
+                        <div class="post-meta text-muted small mb-2">
+                            <span class="post-date">15 Tháng 4, 2025</span>
+                            <span class="mx-2">|</span>
+                            <span class="post-category">Công Nghệ</span>
+                            <span class="mx-2">|</span>
+                            <span class="post-comments">12 Bình luận</span>
+                        </div>
+                        <h2 class="card-title h3 mb-3">
+                            <a href="#" class="text-decoration-none text-dark">Xu Hướng Công Nghệ Đột Phá Năm 2025</a>
+                        </h2>
+                        <p class="card-text mb-4">Khám phá những xu hướng công nghệ mới nhất đang định hình tương lai của ngành công nghiệp máy tính và điện tử. Từ AI tạo sinh và quantum computing đến các thiết bị thực tế ảo tăng cường (AR/VR) thế hệ mới, hãy cùng tìm hiểu những công nghệ đang thay đổi cách chúng ta sống và làm việc.</p>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="author-avatar mr-3">
+                                <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=200&auto=format&fit=crop" alt="Author" class="rounded-circle" width="50" height="50">
+                            </div>
+                            <div class="author-info">
+                                <h6 class="author-name mb-0">Nguyễn Minh Tuấn</h6>
+                                <span class="author-role text-muted small">Chuyên gia công nghệ</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Đọc Tiếp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="latest-articles mb-5">
+        <div class="section-header d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title m-0">Bài Viết Mới Nhất</h2>
+            <div class="section-actions">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-primary active">Tất Cả</button>
+                    <button type="button" class="btn btn-outline-primary">Công Nghệ</button>
+                    <button type="button" class="btn btn-outline-primary">Sản Phẩm</button>
+                    <button type="button" class="btn btn-outline-primary">Mẹo Vặt</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Article 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card article-card border-0 shadow-sm h-100">
+                    <div class="article-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=800&auto=format&fit=crop" alt="Laptop cho sinh viên" class="card-img-top">
+                        <div class="article-category position-absolute px-3 py-2 badge badge-primary" style="top: 15px; left: 15px;">
+                            Công Nghệ
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="post-meta text-muted small mb-2">
+                            <span class="post-date">10 Tháng 4, 2025</span>
+                            <span class="mx-2">|</span>
+                            <span class="post-comments">8 Bình luận</span>
+                        </div>
+                        <h5 class="card-title mb-3">
+                            <a href="#" class="text-decoration-none text-dark">Top 10 Laptop Tốt Nhất Cho Sinh Viên Năm 2025</a>
+                        </h5>
+                        <p class="card-text mb-3">Tổng hợp những mẫu laptop tốt nhất dành cho sinh viên với mức giá phải chăng nhưng vẫn đảm bảo hiệu năng mạnh mẽ cho học tập và giải trí.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop" alt="Author" class="rounded-circle mr-2" width="30" height="30">
+                                <span class="small">Trần Thị Hương</span>
+                            </div>
+                            <a href="#" class="btn btn-link p-0">Đọc tiếp <i class="las la-long-arrow-alt-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card article-card border-0 shadow-sm h-100">
+                    <div class="article-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=800&auto=format&fit=crop" alt="MacBook Pro M4" class="card-img-top">
+                        <div class="article-category position-absolute px-3 py-2 badge badge-success" style="top: 15px; left: 15px;">
+                            Sản Phẩm
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="post-meta text-muted small mb-2">
+                            <span class="post-date">5 Tháng 4, 2025</span>
+                            <span class="mx-2">|</span>
+                            <span class="post-comments">15 Bình luận</span>
+                        </div>
+                        <h5 class="card-title mb-3">
+                            <a href="#" class="text-decoration-none text-dark">Đánh Giá Chi Tiết MacBook Pro M4 - Có Đáng Để Nâng Cấp?</a>
+                        </h5>
+                        <p class="card-text mb-3">Phân tích chi tiết về hiệu năng, thời lượng pin và các tính năng mới của MacBook Pro M4, giúp bạn quyết định có nên nâng cấp hay không.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=100&auto=format&fit=crop" alt="Author" class="rounded-circle mr-2" width="30" height="30">
+                                <span class="small">Lê Văn Đức</span>
+                            </div>
+                            <a href="#" class="btn btn-link p-0">Đọc tiếp <i class="las la-long-arrow-alt-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card article-card border-0 shadow-sm h-100">
+                    <div class="article-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop" alt="Tăng tốc máy tính" class="card-img-top">
+                        <div class="article-category position-absolute px-3 py-2 badge badge-info" style="top: 15px; left: 15px;">
+                            Mẹo Vặt
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="post-meta text-muted small mb-2">
+                            <span class="post-date">28 Tháng 3, 2025</span>
+                            <span class="mx-2">|</span>
+                            <span class="post-comments">11 Bình luận</span>
+                        </div>
+                        <h5 class="card-title mb-3">
+                            <a href="#" class="text-decoration-none text-dark">7 Cách Tăng Tốc Máy Tính Windows Cũ Hiệu Quả Nhất 2025</a>
+                        </h5>
+                        <p class="card-text mb-3">Những mẹo đơn giản nhưng hiệu quả giúp cải thiện tốc độ cho máy tính Windows đã cũ, giúp kéo dài tuổi thọ sử dụng mà không cần nâng cấp phần cứng đắt tiền.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop" alt="Author" class="rounded-circle mr-2" width="30" height="30">
+                                <span class="small">Phạm Thị Mai</span>
+                            </div>
+                            <a href="#" class="btn btn-link p-0">Đọc tiếp <i class="las la-long-arrow-alt-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card article-card border-0 shadow-sm h-100">
+                    <div class="article-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=800&auto=format&fit=crop" alt="AI trong công nghiệp" class="card-img-top">
+                        <div class="article-category position-absolute px-3 py-2 badge badge-warning" style="top: 15px; left: 15px;">
+                            Công Nghệ
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="post-meta text-muted small mb-2">
+                            <span class="post-date">20 Tháng 3, 2025</span>
+                            <span class="mx-2">|</span>
+                            <span class="post-comments">19 Bình luận</span>
+                        </div>
+                        <h5 class="card-title mb-3">
+                            <a href="#" class="text-decoration-none text-dark">Tương Lai Của AI Tạo Sinh Trong Ngành Công Nghiệp Máy Tính</a>
+                        </h5>
+                        <p class="card-text mb-3">Phân tích về vai trò ngày càng quan trọng của trí tuệ nhân tạo tạo sinh trong việc phát triển và cải tiến các sản phẩm máy tính trong tương lai.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop" alt="Author" class="rounded-circle mr-2" width="30" height="30">
+                                <span class="small">Nguyễn Văn Thành</span>
+                            </div>
+                            <a href="#" class="btn btn-link p-0">Đọc tiếp <i class="las la-long-arrow-alt-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Article 5 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card article-card border-0 shadow-sm h-100">
+                    <div class="article-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1623126908029-58cb08a2b272?q=80&w=800&auto=format&fit=crop" alt="NVIDIA RTX 5000 Series" class="card-img-top">
+                        <div class="article-category position-absolute px-3 py-2 badge badge-danger" style="top: 15px; left: 15px;">
+                            Sản Phẩm
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="post-meta text-muted small mb-2">
+                            <span class="post-date">15 Tháng 3, 2025</span>
+                            <span class="mx-2">|</span>
+                            <span class="post-comments">23 Bình luận</span>
+                        </div>
+                        <h5 class="card-title mb-3">
+                            <a href="#" class="text-decoration-none text-dark">So Sánh Các Dòng Card Đồ Họa NVIDIA RTX 5000 Series</a>
+                        </h5>
+                        <p class="card-text mb-3">Phân tích chi tiết hiệu năng và giá thành của các dòng card đồ họa NVIDIA RTX 5000 series mới nhất, giúp bạn lựa chọn sản phẩm phù hợp nhất.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=100&auto=format&fit=crop" alt="Author" class="rounded-circle mr-2" width="30" height="30">
+                                <span class="small">Trần Văn Hùng</span>
+                            </div>
+                            <a href="#" class="btn btn-link p-0">Đọc tiếp <i class="las la-long-arrow-alt-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Article 6 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card article-card border-0 shadow-sm h-100">
+                    <div class="article-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=800&auto=format&fit=crop" alt="Bảo trì laptop" class="card-img-top">
+                        <div class="article-category position-absolute px-3 py-2 badge badge-primary" style="top: 15px; left: 15px;">
+                            Mẹo Vặt
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="post-meta text-muted small mb-2">
+                            <span class="post-date">8 Tháng 3, 2025</span>
+                            <span class="mx-2">|</span>
+                            <span class="post-comments">14 Bình luận</span>
+                        </div>
+                        <h5 class="card-title mb-3">
+                            <a href="#" class="text-decoration-none text-dark">Hướng Dẫn Bảo Trì Laptop Đúng Cách Để Kéo Dài Tuổi Thọ</a>
+                        </h5>
+                        <p class="card-text mb-3">Những bước cơ bản để bảo trì laptop đúng cách, từ vệ sinh bàn phím đến tối ưu hóa hệ thống, giúp máy hoạt động ổn định và bền lâu trong năm 2025.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Author" class="rounded-circle mr-2" width="30" height="30">
+                                <span class="small">Lê Thị Hồng</span>
+                            </div>
+                            <a href="#" class="btn btn-link p-0">Đọc tiếp <i class="las la-long-arrow-alt-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                        <i class="las la-long-arrow-alt-left mr-2"></i>Trang trước
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">
+                        Trang sau<i class="las la-long-arrow-alt-right ml-2"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section mb-5">
+        <div class="card border-0 shadow-sm rounded-lg bg-light">
+            <div class="card-body p-4 p-md-5 text-center">
+                <h3 class="mb-3">Đăng Ký Nhận Tin</h3>
+                <p class="text-muted mb-4">Nhận thông tin mới nhất về sản phẩm, khuyến mãi và tin tức công nghệ</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Nhập địa chỉ email của bạn" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">
+                                        <span>Đăng Ký</span>
+                                        <i class="las la-paper-plane ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

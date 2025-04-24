@@ -1,0 +1,180 @@
+﻿@model IEnumerable<DoAn.Models.TinTuc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/Admin/Home" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/KhachHangs" class="nav-link">Bài Viết</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="navbar-search-block">
+                <form class="form-inline">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" type="search" placeholder="Từ khóa tìm kiếm" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/Admin/Home">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Quản lý bài viết</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"><b>Danh sách bài viết</b></h3>
+
+            <div class="card-tools">
+                <a href="/admin/tintucs/create" class="btn btn-primary">Thêm mới</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Ảnh</th>
+                        <th>Tiêu Đề</th>
+                        <th>Ngày Tạo</th>
+                        <th>Người Tạo</th>
+                        <th>Trạng thái</th>
+                        <th>Thực hiện</th>
+                    </tr>
+                </thead>
+                @if (Model != null && Model.Any())
+                {
+                    var i = 1;
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                <img src="@Url.Content("~/wwwroot/tintuc/" + item.hinhanh)" class="img-rounded" width="150" height="150" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tieude)
+                            </td>
+                            <td>
+                                @item.ngaytao.ToString("dd/MM/yyyy")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.KhachHang.hoten)
+                            </td>
+                            @if (item.trangthai == true)
+                            {
+                                <td class="text-success">
+                                    Hiển thị
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="text-danger">Ẩn</td>
+                            }
+                            <td>
+                                <a href="/admin/tintucs/details/@item.matintuc" class="btn btn-dark">Chi tiết</a>
+                                <a href="/admin/tintucs/edit/@item.matintuc" class="btn btn-primary">Sửa</a>
+                                @*<a href="/admin/tintucs/delete/@item.matintuc" class="btn btn-danger">Xóa</a>*@
+                                <input type="button" data-id="@item.matintuc" class="delete btn btn-danger" value="Xóa" />
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4">Không có bản ghi nào!!!</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</section>
+
+<script>
+$(document).ready(function() {
+    $('.delete').click(function() {
+        var newid = $(this).data('id');
+
+        if (confirm("Bạn có chắc chắn muốn xóa bài viết này?")) {
+            $.ajax({
+                url: '@Url.Action("DeleteConfirmed", "TinTucs")',
+                type: 'POST',
+                data: { id: newid },
+                success: function(result) {
+                    if (result.success) {
+                        alert('Xóa bài viết thành công!');
+                        window.location.reload(); // Tải lại trang
+                    } else {
+                        alert('Xóa bài viết thất bại!');
+                    }
+                },
+                error: function() {
+                    // Xử lý khi có lỗi xảy ra trong quá trình gửi yêu cầu
+                    alert('Đã xảy ra lỗi!');
+                }
+            });
+        }
+    });
+});
+</script>

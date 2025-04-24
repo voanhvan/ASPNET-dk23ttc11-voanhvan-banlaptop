@@ -1,0 +1,199 @@
+﻿@model DoAn.Models.DonHang
+@{
+    ViewBag.Title = "ChiTietDonHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var dsDHCT = (List<DoAn.Models.DonHangChiTiet>)ViewBag.DHCT;
+    decimal total = 0;
+}
+
+<main class="main">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/DonHangs/Index">Đơn Hàng</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Chi Tiết Đơn Hàng</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="page-content">
+        <div class="checkout">
+            <div class="container">
+                <div class="row">
+                    <aside class="col-lg-12">
+                        <div class="summary">
+                            <h4>Chi Tiết Hóa Đơn</h4>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label><b>Họ Tên Người Mua:</b>  @Html.DisplayFor(model => model.KhachHang.hoten) </label>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label><b>Số Điện Thoại:</b>  @Html.DisplayFor(model => model.dienthoai)</label>
+                                </div>
+                            </div>
+
+                            <label class="mt-1"><b>Địa Chỉ:</b>  @Html.DisplayFor(model => model.diachi)</label>
+
+                            <div class="row mt-1">
+                                <div class="col-sm-6">
+                                    <label>
+                                        <b>Ngày Đặt:</b>
+                                        @{
+                                            string date = Model.ngaydat.ToString("dd/MM/yyyy");
+                                        }
+                                        @date
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label>
+                                        <b>Ngày Nhận Dự Kiến:</b>
+                                        @{
+                                            string datee = Model.ngaynhan.ToString("dd/MM/yyyy");
+                                        }
+                                        @datee
+                                    </label>
+                                </div>
+                            </div>
+
+                            <label class="mt-1"><b>Hình Thức Thanh Toán:</b>  @Html.DisplayFor(model => model.thanhtoan)</label>
+                            <br />
+
+                            <h2 class="checkout-title mt-1">Phí Vận Chuyển: Miễn phí</h2>
+
+
+                            <h2 class="checkout-title mt-2 mb-2">Sản Phẩm Mua:</h2>
+                            <table class="table table-summary">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>STT</th>
+                                        <th style="width: 20px;"></th>
+                                        <th style="width: 500px;">Sản Phẩm</th>
+                                        <th>Model sản phẩm</th>
+                                        <th>Số Lượng</th>
+                                        <th>Thành Tiền</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        var i = 1;
+                                        foreach (var item in dsDHCT)
+                                        {
+                                            <tr class="text-center">
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td></td>
+                                                <td class="product-col">
+                                                    <div class="product">
+                                                        <figure class="product-media">
+                                                            <a href="#">
+                                                                <img src="@Url.Content("~/wwwroot/images/" + item.SanPham.hinhanh)" alt="Product image">
+                                                            </a>
+                                                        </figure>
+
+                                                        <h3 class="product-title">
+                                                            <a href="#">
+                                                                @{
+                                                                    string tensp = item.SanPham.tensp.ToString();
+                                                                    string[] ten = tensp.Split('(');
+                                                                    string tengon = ten[0];
+                                                                }
+                                                                @tengon
+                                                            </a>
+                                                        </h3><!-- End .product-title -->
+                                                    </div><!-- End .product -->
+                                                </td>
+                                                <td>
+                                                    @item.SanPham.model
+                                                </td>
+                                                <td class="quantity-col text-center">
+                                                    @item.soluong
+                                                </td>
+
+
+                                                <td class="total-col">
+                                                    @{
+                                                        var thanhtien = item.soluong * item.SanPham.giaban;
+                                                        total = total + (decimal)thanhtien;
+                                                        decimal t = (decimal)thanhtien;
+                                                        string formattedPrice = t.ToString("#,##0");
+
+                                                    }
+                                                    @formattedPrice đ
+                                                </td>
+                                            </tr>
+                                            i++;
+
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+
+                            <h2 class="checkout-title total-col mt-5 mb-5">
+                                @{
+                                    string TT = total.ToString("#,##0");
+                                }
+                                Tổng Hóa Đơn: <span class="text-primary">@TT đ</span>
+
+                            </h2>
+
+                            @if (Model.trangthai == false)
+                            {
+                                <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block" data-orderid="@Model.madonhang">
+                                    <span class="btn-text">Xác Nhận Hủy</span>
+                                    <span class="btn-hover-text">Xác Nhận Hủy</span>
+                                </button>
+                            }
+                            else if (Model.trangthai == true)
+                            {
+                                <button type="submit" class="btn btn-outline-primary-2 btn-block" data-orderid="@Model.madonhang">
+                                    <span class="btn-text">Mua Lại</span>
+                                    <span class="btn-hover-text">Mua Lại</span>
+                                </button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="btn btn-outline-primary-2 btn-block" data-orderid="@Model.madonhang">
+                                    <span class="text-danger">Đã Hủy</span>
+                                </button>
+                            }
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    $(document).ready(function(){
+        $('.btn-order').click(function () {
+            var orderID = $(this).data('orderid');
+            console.log(orderID);
+            if (confirm("Bạn có chắc muốn hủy đơn này?")) {
+                $.ajax({
+                    url: '@Url.Action("Huy", "DonHangs")',
+                    type: 'POST',
+                    data: { id: orderID },
+                    success: function (result) {
+                        if (result.success) {
+                            alert("Hủy thành công");
+                            window.location.href = '/DonHangs/Index';
+                        }
+                        else {
+                            alert("Xóa tài khoản thất bại");
+                        }
+                    },
+                    Error: function () {
+                        alert("Đã xảy ra lỗi!");
+                    }
+                });
+            }
+        });
+    });
+</script>

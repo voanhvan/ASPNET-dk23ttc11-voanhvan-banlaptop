@@ -1,0 +1,383 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    List<DoAn.Models.SanPham> ds = ViewBag.sale;
+    List<DoAn.Models.SanPham> dsnew = ViewBag.dsnew;
+}
+
+<main class="main">
+    <div class="intro-slider-container">
+        <div class="intro-slider owl-carousel owl-simple owl-nav-inside" data-toggle="owl" data-owl-options='{
+                        "nav": false,
+                        "responsive": {
+                            "992": {
+                                "nav": true
+                            }
+                        }
+                    }'>
+            <div class="intro-slide" style="background-image: url(https://intphcm.com/data/upload/banner-la-gi.jpg);">
+                @*<div class="container intro-content">
+                    <div class="row">
+                        <div class="col-auto offset-lg-3 intro-col">
+                            <h3 class="intro-subtitle">Trade-In Offer</h3> 
+                            <h1 class="intro-title">
+                                MacBook Air <br>Latest Model
+                                <span>
+                                    <sup class="font-weight-light">from</sup>
+                                    <span class="text-primary">$999<sup>,99</sup></span>
+                                </span>
+                            </h1> 
+
+                            <a href="category.html" class="btn btn-outline-primary-2">
+                                <span>Shop Now</span>
+                                <i class="icon-long-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div> 
+                </div>*@ 
+            </div> 
+
+            <div class="intro-slide" style="background-image: url(https://thanhlymaytinh.net/wp-content/uploads/2023/03/banner-thanhlymaytinhnet.jpg);">
+                @*<div class="container intro-content">
+                    <div class="row">
+                        <div class="col-auto offset-lg-3 intro-col">
+                            <h3 class="intro-subtitle">Trevel & Outdoor</h3>
+                            <h1 class="intro-title">
+                                Original Outdoor <br>Beanbag
+                                <span>
+                                    <sup class="font-weight-light line-through">$89,99</sup>
+                                    <span class="text-primary">$29<sup>,99</sup></span>
+                                </span>
+                            </h1>
+
+                            <a href="category.html" class="btn btn-outline-primary-2">
+                                <span>Shop Now</span>
+                                <i class="icon-long-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+
+            <div class="intro-slide" style="background-image: url(https://tinhocpnn.com/wp-content/uploads/2019/10/slide-banner-trang-chu-1-cap-nhat.png);">
+                @*<div class="container intro-content">
+                    <div class="row">
+                        <div class="col-auto offset-lg-3 intro-col">
+                            <h3 class="intro-subtitle">Fashion Promotions</h3>
+                            <h1 class="intro-title">
+                                Tan Suede <br>Biker Jacket
+                                <span>
+                                    <sup class="font-weight-light line-through">$240,00</sup>
+                                    <span class="text-primary">$180<sup>,99</sup></span>
+                                </span>
+                            </h1>
+
+                            <a href="category.html" class="btn btn-outline-primary-2">
+                                <span>Shop Now</span>
+                                <i class="icon-long-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+
+        <span class="slider-loader"></span>
+    </div>
+
+    <div class="pb-2"></div>
+
+    <div class="bg-light pt-3 pb-5">
+        <div class="container">
+            <div class="heading heading-flex heading-border mb-3">
+                <div class="heading-left">
+                    <h2 class="title">Hot Deals</h2>
+                </div>
+
+                <div class="heading-right">
+                    <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content tab-content-carousel">
+                <div class="tab-pane p-0 fade show active" id="hot-all-tab" role="tabpanel" aria-labelledby="hot-all-link">
+                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                         data-owl-options='{
+                                    "nav": false,
+                                    "dots": true,
+                                    "margin": 20,
+                                    "loop": false,
+                                    "responsive": {
+                                        "0": {
+                                            "items":2
+                                        },
+                                        "480": {
+                                            "items":2
+                                        },
+                                        "768": {
+                                            "items":3
+                                        },
+                                        "992": {
+                                            "items":4
+                                        },
+                                        "1280": {
+                                            "items":5,
+                                            "nav": true
+                                        }
+                                    }
+                                }'>
+                        @foreach (var item in ds)
+                        {
+                            <div class="product">
+                                <figure class="product-media">
+                                    <span class="product-label label-sale">Sale</span>
+                                    <a href="~/SanPhams/Details/@item.masp">
+                                        <img src="@Url.Content("~/wwwroot/images/" + item.hinhanh)" alt="Product image" class="product-image">
+                                    </a>
+
+                                    <div class="product-action-vertical">
+                                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>Yêu thích</span></a>
+                                    </div>
+
+                                    <div class="product-action">
+                                        <button id="addcart" data-product-id="@item.masp" class="btn-product btn-cart" title="Add to cart">
+                                            <span>Thêm vào giỏ</span>
+                                        </button>
+
+                                    </div>
+                                </figure>
+
+                                <div class="product-body">
+                                    <h3 class="product-title"><a href="~/SanPhams/Details/@item.masp">@item.tensp</a></h3>
+                                    <h class="font-weight-light line-through">
+                                        @{
+                                            decimal giaban = (decimal)item.giaban;
+                                            decimal giagoc = (decimal)(5 * item.giaban) / 100 + (decimal)item.giaban;
+                                            string formattedPrice = giaban.ToString("#,##0");
+                                            string formatGiagoc = giagoc.ToString("#,##0");
+                                        }
+                                        @formatGiagoc  đ
+                                    </h>
+                                    <div class="product-price">
+                                        @formattedPrice đ
+                                    </div>
+                                    <div class="ratings-container">
+                                        <div class="ratings">
+                                            <div class="ratings-val" style="width: 80%;"></div>
+                                        </div>
+                                        <span class="ratings-text">( 12 Reviews )</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3"></div>
+
+        <div class="container electronics">
+            <div class="heading heading-flex heading-border mb-3">
+                <div class="heading-left">
+                    <h2 class="title">Sản Phẩm Mới</h2>
+                </div>
+            </div>
+
+            <div class="tab-content tab-content-carousel">
+                <div class="tab-pane p-0 fade show active" id="elec-new-tab" role="tabpanel" aria-labelledby="elec-new-link">
+                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                         data-owl-options='{
+                                "nav": false,
+                                "dots": true,
+                                "margin": 20,
+                                "loop": false,
+                                "responsive": {
+                                    "0": {
+                                        "items":2
+                                    },
+                                    "480": {
+                                        "items":2
+                                    },
+                                    "768": {
+                                        "items":3
+                                    },
+                                    "992": {
+                                        "items":4
+                                    },
+                                    "1280": {
+                                        "items":5,
+                                        "nav": true
+                                    }
+                                }
+                            }'>
+                        @foreach (var item in dsnew)
+                        {
+                            <div class="product">
+                                <figure class="product-media">
+                                    <span class="product-label label-new">New</span>
+                                    <a href="~/SanPhams/Details/@item.masp">
+                                        <img src="@Url.Content("~/wwwroot/images/" + item.hinhanh)" alt="Product image" class="product-image">
+                                    </a>
+
+                                    <div class="product-action-vertical">
+                                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>Yêu thích</span></a>
+                                    </div>
+
+                                    <div class="product-action">
+                                        <button id="addcart" data-product-id="@item.masp" class="btn-product btn-cart" title="Add to cart">
+                                            <span>Thêm vào giỏ</span>
+                                        </button>
+
+                                    </div>
+                                </figure>
+
+                                <div class="product-body">
+                                    <h3 class="product-title"><a href="~/SanPhams/Details/@item.masp">@item.tensp</a></h3>
+                                    <div class="product-price">
+                                        @{
+                                            decimal giaban = (decimal)item.giaban;
+                                            string formattedPrice = giaban.ToString("#,##0");
+                                        }
+                                        @formattedPrice đ
+                                    </div>
+                                    <div class="ratings-container">
+                                        <div class="ratings">
+                                            <div class="ratings-val" style="width: 80%;"></div>
+                                        </div>
+                                        <span class="ratings-text">( 12 Reviews )</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner banner-overlay banner-overlay-light">
+                        <a href="#">
+                            <img src="~/wwwroot/images/banner5.png" alt="Banner">
+                        </a>
+
+                        <!--<div class="banner-content">
+                            <h4 class="banner-subtitle d-none d-sm-block"><a href="#">Spring Sale is Coming</a></h4>--><!-- End .banner-subtitle -->
+                            <!--<h3 class="banner-title"><a href="#">All Smart Watches <br>Discount <br><span class="text-primary">15% off</span></a></h3>--><!-- End .banner-title -->
+                            <!--<a href="#" class="banner-link banner-link-dark">Discover Now <i class="icon-long-arrow-right"></i></a>
+                        </div>-->
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="banner banner-overlay">
+                        <a href="#">
+                            <img src="~/wwwroot/images/banner6.png" alt="Banner">
+                        </a>
+
+                        <!--<div class="banner-content">
+                            <h4 class="banner-subtitle text-white  d-none d-sm-block"><a href="#">Amazing Value</a></h4>--><!-- End .banner-subtitle -->
+                            <!--<h3 class="banner-title text-white"><a href="#">Headphones Trending <br>JBL Harman <br><span>from $59,99</span></a></h3>--><!-- End .banner-title -->
+                            <!--<a href="#" class="banner-link">Discover Now <i class="icon-long-arrow-right"></i></a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        @*<div class="mb-3"></div>
+
+        <div class="container">
+            <h2 class="title title-border mb-5">Hãng Sản Xuất</h2>
+            <div class="owl-carousel mb-5 owl-simple" data-toggle="owl"
+                 data-owl-options='{
+                        "nav": false,
+                        "dots": true,
+                        "margin": 30,
+                        "loop": false,
+                        "responsive": {
+                            "0": {
+                                "items":2
+                            },
+                            "420": {
+                                "items":3
+                            },
+                            "600": {
+                                "items":4
+                            },
+                            "900": {
+                                "items":5
+                            },
+                            "1024": {
+                                "items":6
+                            },
+                            "1280": {
+                                "items":6,
+                                "nav": true,
+                                "dots": false
+                            }
+                        }
+                    }'>
+                <a href="#" class="brand">
+                    <img src="~/Content/assets/images/brands/1.png" alt="Brand Name">
+                </a>
+
+                <a href="#" class="brand">
+                    <img src="~/Content/assets/images/brands/2.png" alt="Brand Name">
+                </a>
+
+                <a href="#" class="brand">
+                    <img src="~/Content/assets/images/brands/3.png" alt="Brand Name">
+                </a>
+
+                <a href="#" class="brand">
+                    <img src="~/Content/assets/images/brands/4.png" alt="Brand Name">
+                </a>
+
+                <a href="#" class="brand">
+                    <img src="~/Content/assets/images/brands/5.png" alt="Brand Name">
+                </a>
+
+                <a href="#" class="brand">
+                    <img src="~/Content/assets/images/brands/6.png" alt="Brand Name">
+                </a>
+
+                <a href="#" class="brand">
+                    <img src="~/Content/assets/images/brands/7.png" alt="Brand Name">
+                </a>
+            </div>
+        </div>*@
+
+</main>
+
+<script>
+    $(document).ready(function() {
+        $('.btn-cart').click(function() {
+            var productId = $(this).data('product-id');
+            $.ajax({
+                url: '@Url.Action("AddCart1", "SanPhams")',
+                type: 'POST',
+                data: { id: productId },
+                success: function(result) {
+                    if (result.success) {
+                        toastr.success("Thêm vào giỏ hàng thành công", "Thành Công");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000);
+                    } else {
+                        window.location.href = '/Login/Index';
+                    }
+                },
+                error: function() {
+                    alert('Đã xảy ra lỗi!');
+                }
+            });
+
+        });
+});
+</script>

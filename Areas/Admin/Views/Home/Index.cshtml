@@ -1,0 +1,253 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var doanhthu = ViewBag.doanhthu;
+    string formattedDoanhThu = doanhthu.ToString("N0").Replace(",", ".");
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/Admin/Home" class="nav-link">Trang chủ</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="navbar-search-block">
+                <form class="form-inline">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" type="search" placeholder="Từ khóa tìm kiếm" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-envelope mr-2"></i> 4 new messages
+                    <span class="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-users mr-2"></i> 8 friend requests
+                    <span class="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-file mr-2"></i> 3 new reports
+                    <span class="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div>
+
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <div class="form-group" data-select2-id="47">
+                            <select class="form-control" style="width: 100%;" data-select2-id="9" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="1">Hôm Nay</option>
+                                <option value="2">Tuần Này</option>
+                                <option value="3">Tháng Này</option>
+                                <option value="4">Tất Cả</option>
+                            </select>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3 id="donhang">@ViewBag.donhang</h3>
+
+                        <p>Đơn Hàng</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    @*<a href="#" class="small-box-footer">Xem Thêm <i class="fas fa-arrow-circle-right"></i></a>*@
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3 id="doanhthu">@formattedDoanhThu đ</h3>
+
+                        <p>Doanh Thu</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3 id="khachhang">@ViewBag.khachhang</h3>
+
+                        <p>Khách Hàng</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="far fa-chart-bar"></i>
+                    Biểu đồ thống kê doanh thu
+                </h3>
+                <canvas id="myChart" style="width:100%; height: 550px;"></canvas>
+                <script>
+                    var myArray = JSON.parse('@Html.Raw(Json.Encode(ViewBag.doanhthuthang))');
+                    
+                    const xValues = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
+                    const yValues = [15, 49, 200, 24, 20, 44, 24, 15, 20, 6, 15, 20];
+                    const barColors = ["blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue"];
+
+                    new Chart("myChart", {
+                        type: "bar",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: myArray
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                legend: { display: false },
+                                title: {
+                                    display: true,
+
+                                },
+                                tooltip: { enabled: true }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: {
+                                        display: true,
+                                        text: "Doanh thu (triệu đồng)"
+                                    }
+                                } 
+                            }
+                        }
+                    });
+                </script>
+
+            </div>
+            
+        </div>
+        <!--<div class="card card-primary card-outline">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="far fa-chart-bar"></i>
+            Bar Chart
+        </h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div id="bar-chart" style="height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="419" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 419.5px; height: 300px;"></canvas><canvas class="flot-overlay" width="419" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 419.5px; height: 300px;"></canvas><div class="flot-svg" style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;"><svg style="width: 100%; height: 100%;"><g class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px;"><text x="157.29403409090907" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">March</text><text x="226.58096590909088" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">April</text><text x="293.6291281960227" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">May</text><text x="20.596635298295453" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">January</text><text x="355.7275834517045" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">June</text><text x="82.65456321022727" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">February</text></g><g class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px;"><text x="8.9521484375" y="269" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">0</text><text x="8.9521484375" y="205.5" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">5</text><text x="1" y="15" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">20</text><text x="1" y="142" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">10</text><text x="1" y="78.5" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">15</text></g></svg></div></div>
+    </div>-->
+        <!-- /.card-body-->
+        <!--</div>-->
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+        // Bắt sự kiện khi lựa chọn thay đổi
+        $('select.form-control').change(function () {
+            // Lấy giá trị lựa chọn hiện tại
+            var selectedOption = $(this).children("option:selected").val();
+
+            $.ajax({
+                url: '/Admin/Home/Index',
+                type: 'POST',
+                data: { fill: selectedOption },
+                success: function (result) {
+                    $('#donhang').text(result.dh);
+                    var formattedDoanhThu = result.dt.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+                    $('#doanhthu').text(formattedDoanhThu);
+                    $('#khachhang').text(result.kh);
+                },
+                error: function () {
+                    alert("LỖI");
+                }
+            });
+        });
+    });
+</script>
