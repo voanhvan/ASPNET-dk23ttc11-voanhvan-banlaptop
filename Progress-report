@@ -45,3 +45,12 @@ Dự án xây dựng website bán laptop cho công ty An Phát Computer nhằm t
 - **Cải thiện hiệu suất**:
   - Tăng cường việc sử dụng caching để giảm thiểu việc truy vấn cơ sở dữ liệu.
   - Tối ưu hóa các query SQL và sử dụng lazy loading cho các dữ liệu không cần thiết phải tải ngay lập tức.
+## 5. Kế Hoạch Tiến Độ Tiếp Theo
+
+- **Tháng 3/2025**: Tiếp tục triển khai chức năng thanh toán online và hoàn thiện tính năng giỏ hàng.
+- **Tháng 4/2025**: Hoàn thành việc tối ưu hóa hiệu suất của hệ thống và bắt đầu triển khai website lên môi trường sản xuất.
+- **Tháng 5/2025**: Kiểm thử tổng thể và chuẩn bị cho buổi báo cáo kết quả dự án.
+
+## 6. Kết Luận
+
+Dự án xây dựng website bán laptop đã tiến hành tốt và đạt được các mốc quan trọng. Tuy nhiên, một số chức năng quan trọng như thanh toán online và tối ưu hóa hiệu suất vẫn cần được hoàn thiện. Mặc dù vậy, tiến độ dự án hiện tại vẫn đang trong tầm kiểm soát và các bước tiếp theo đã được lên kế hoạch cụ thể.
