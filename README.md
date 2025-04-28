@@ -22,3 +22,12 @@ Website này cung cấp các tính năng như:
 - **Ngôn ngữ lập trình**: C#
 - **Framework**: ASP.NET MVC
 - **Cơ sở dữ liệu**: SQL Server
+- ## Cài Đặt
+1. **Clone repository**:
+
+   git clone https://github.com/your-username/laptop-store.git
+   ## Cài Đặt
+2. **Cài đặt các gói NuGet: Mở terminal và chạy lệnh:
+  dotnet restore
+3. ** Cấu hình cơ sở dữ liệu: Cập nhật chuỗi kết nối trong appsettings.json với thông tin cơ sở dữ liệu của bạn.
+4. ** http://localhost:5000 trong trình duyệt
