@@ -25,9 +25,9 @@ Website này cung cấp các tính năng như:
 - ## Cài Đặt
 1. **Clone repository**:
 
-   git clone https://github.com/your-username/laptop-store.git
+   git clone https://github.com/voanhvan/ASPNET-dk23ttc11-voanhvan-banlaptop.git
    ## Cài Đặt
 2. **Cài đặt các gói NuGet: Mở terminal và chạy lệnh:
   dotnet restore
 3. ** Cấu hình cơ sở dữ liệu: Cập nhật chuỗi kết nối trong appsettings.json với thông tin cơ sở dữ liệu của bạn.
-4. ** http://localhost:5000 trong trình duyệt
+4. ** http://https://localhost:44352 trong trình duyệt
